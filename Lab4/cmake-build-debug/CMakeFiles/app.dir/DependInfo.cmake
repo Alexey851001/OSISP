@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/5sem/OSISP/Lab4/main.cpp" "D:/5sem/OSISP/Lab4/cmake-build-debug/CMakeFiles/app.dir/main.cpp.obj"
-  "D:/5sem/OSISP/Lab4/queueElem/QueueElem.cpp" "D:/5sem/OSISP/Lab4/cmake-build-debug/CMakeFiles/app.dir/queueElem/QueueElem.cpp.obj"
+  "D:/5sem/OSISP/OSISP/Lab4/main.cpp" "D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug/CMakeFiles/app.dir/main.cpp.obj"
+  "D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.cpp" "D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug/CMakeFiles/app.dir/queueElem/QueueElem.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

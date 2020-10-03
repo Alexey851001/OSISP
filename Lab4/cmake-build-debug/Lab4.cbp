@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/5sem/OSISP/Lab4/cmake-build-debug"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 all"/>
-					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="app">
-				<Option output="D:/5sem/OSISP/Lab4/cmake-build-debug/app.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/5sem/OSISP/Lab4/cmake-build-debug"/>
+				<Option output="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug/app.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -33,15 +33,15 @@
 					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 app"/>
-					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 app"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="app/fast">
-				<Option output="D:/5sem/OSISP/Lab4/cmake-build-debug/app.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/5sem/OSISP/Lab4/cmake-build-debug"/>
+				<Option output="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug/app.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="msvc8"/>
@@ -55,43 +55,43 @@
 					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 app/fast"/>
-					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 app/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/5sem/OSISP/Lab4/cmake-build-debug"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/5sem/OSISP/Lab4/cmake-build-debug"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Lab4/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
-					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\Makefile VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/5sem/OSISP/Lab4/main.cpp">
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/main.cpp">
 			<Option target="app"/>
 		</Unit>
-		<Unit filename="D:/5sem/OSISP/Lab4/queueElem/QueueElem.cpp">
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.cpp">
 			<Option target="app"/>
 		</Unit>
-		<Unit filename="D:/5sem/OSISP/Lab4/queueElem/QueueElem.h">
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h">
 			<Option target="app"/>
 		</Unit>
-		<Unit filename="D:/5sem/OSISP/Lab4/CMakeLists.txt">
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

@@ -7,8 +7,8 @@
 
 #include "queueElem/QueueElem.h"
 
-#define FILE_PATH_TO_READ  "D:\\5sem\\OSISP\\Lab4\\test.txt"
-#define FILE_PATH_TO_WRITE  "D:\\5sem\\OSISP\\Lab4\\out.txt"
+#define FILE_PATH_TO_READ  "D:\\5sem\\OSISP\\OSISP\\Lab4\\test.txt"
+#define FILE_PATH_TO_WRITE  "D:\\5sem\\OSISP\\OSISP\\Lab4\\out.txt"
 #define MAX_STRING_SIZE 1024
 #define COUNT_OF_THREAD 4
 
