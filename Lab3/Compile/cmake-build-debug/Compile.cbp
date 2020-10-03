@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Compile"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="injectDll">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/injectDll.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DINJECT"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 injectDll"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="injectDll/fast">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/injectDll.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add option="-DINJECT"/>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 injectDll/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="library">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/library.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 library"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="library/fast">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/library.dll" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 library/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="app">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/app.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 app"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="app/fast">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/app.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 app/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 test"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test/fast">
+				<Option output="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/test.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/Lab3/Compile/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.18362.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 test/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\Lab3\Compile\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/5sem/OSISP/Lab3/Compile/library/library.cpp">
+			<Option target="injectDll"/>
+			<Option target="library"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/Lab3/Compile/library/library.h">
+			<Option target="injectDll"/>
+			<Option target="library"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/Lab3/Compile/main.cpp">
+			<Option target="app"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/Lab3/Compile/test.cpp">
+			<Option target="test"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/Lab3/Compile/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
