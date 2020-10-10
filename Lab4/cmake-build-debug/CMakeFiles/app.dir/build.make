@@ -99,19 +99,40 @@ CMakeFiles\app.dir\queueElem\QueueElem.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\app.dir\queueElem\QueueElem.cpp.s /c D:\5sem\OSISP\OSISP\Lab4\queueElem\QueueElem.cpp
 <<
 
+CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj: CMakeFiles\app.dir\flags.make
+CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj: ..\ThreadpoolQueueProcessor.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/ThreadpoolQueueProcessor.cc.obj"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj /FdCMakeFiles\app.dir\ /FS -c D:\5sem\OSISP\OSISP\Lab4\ThreadpoolQueueProcessor.cc
+<<
+
+CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/app.dir/ThreadpoolQueueProcessor.cc.i"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\5sem\OSISP\OSISP\Lab4\ThreadpoolQueueProcessor.cc
+<<
+
+CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/app.dir/ThreadpoolQueueProcessor.cc.s"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.s /c D:\5sem\OSISP\OSISP\Lab4\ThreadpoolQueueProcessor.cc
+<<
+
 # Object files for target app
 app_OBJECTS = \
 "CMakeFiles\app.dir\main.cpp.obj" \
-"CMakeFiles\app.dir\queueElem\QueueElem.cpp.obj"
+"CMakeFiles\app.dir\queueElem\QueueElem.cpp.obj" \
+"CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
 app.exe: CMakeFiles\app.dir\main.cpp.obj
 app.exe: CMakeFiles\app.dir\queueElem\QueueElem.cpp.obj
+app.exe: CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj
 app.exe: CMakeFiles\app.dir\build.make
 app.exe: CMakeFiles\app.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable app.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable app.exe"
 	"D:\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\app.dir --rc="D:\Embarcadero Studio 19.0\Windows Kits 10\bin\10.0.18362.0\x86\rc.exe" --mt="D:\Embarcadero Studio 19.0\Windows Kits 10\bin\10.0.18362.0\x86\mt.exe" --manifests  -- C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\app.dir\objects1.rsp @<<
  /out:app.exe /implib:app.lib /pdb:D:\5sem\OSISP\OSISP\Lab4\cmake-build-debug\app.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:console  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

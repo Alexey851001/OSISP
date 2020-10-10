@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/ThreadpoolQueueProcessor.cc">
+			<Option target="app"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/ThreadpoolQueueProcessor.h">
+			<Option target="app"/>
+		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/main.cpp">
 			<Option target="app"/>
 		</Unit>

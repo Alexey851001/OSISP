@@ -127,6 +127,33 @@ app\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\build
 .PHONY : app\fast
 
+ThreadpoolQueueProcessor.obj: ThreadpoolQueueProcessor.cc.obj
+
+.PHONY : ThreadpoolQueueProcessor.obj
+
+# target to build an object file
+ThreadpoolQueueProcessor.cc.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj
+.PHONY : ThreadpoolQueueProcessor.cc.obj
+
+ThreadpoolQueueProcessor.i: ThreadpoolQueueProcessor.cc.i
+
+.PHONY : ThreadpoolQueueProcessor.i
+
+# target to preprocess a source file
+ThreadpoolQueueProcessor.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.i
+.PHONY : ThreadpoolQueueProcessor.cc.i
+
+ThreadpoolQueueProcessor.s: ThreadpoolQueueProcessor.cc.s
+
+.PHONY : ThreadpoolQueueProcessor.s
+
+# target to generate assembly for a file
+ThreadpoolQueueProcessor.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.s
+.PHONY : ThreadpoolQueueProcessor.cc.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -190,6 +217,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
+	@echo ... ThreadpoolQueueProcessor.obj
+	@echo ... ThreadpoolQueueProcessor.i
+	@echo ... ThreadpoolQueueProcessor.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

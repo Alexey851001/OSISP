@@ -3,4 +3,7 @@ project(Lab4)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(app main.cpp queueElem/QueueElem.cpp queueElem/QueueElem.h)
+add_executable(app main.cpp queueElem/QueueElem.cpp
+        queueElem/QueueElem.h
+        ThreadpoolQueueProcessor.cc ThreadpoolQueueProcessor.h
+        )

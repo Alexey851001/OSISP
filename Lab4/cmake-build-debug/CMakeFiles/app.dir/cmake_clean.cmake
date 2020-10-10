@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/ThreadpoolQueueProcessor.cc.obj"
   "CMakeFiles/app.dir/main.cpp.obj"
   "CMakeFiles/app.dir/queueElem/QueueElem.cpp.obj"
   "app.exe"
