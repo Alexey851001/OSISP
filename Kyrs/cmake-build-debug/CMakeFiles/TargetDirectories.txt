@@ -1,0 +1,3 @@
+D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir
+D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/rebuild_cache.dir

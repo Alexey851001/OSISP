@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Kyrs"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="msvc8"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 all"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 edit_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Atomas">
+				<Option output="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/Atomas.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 Atomas"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Atomas/fast">
+				<Option output="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/Atomas.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="0"/>
+				<Option compiler="msvc8"/>
+				<Compiler>
+					<Add directory="C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\VC\Tools\MSVC\14.27.29110\include"/>
+					<Add directory="C:\Program Files (x86)\Windows Kits\NETFXSDK\4.8\include\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\ucrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\shared"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\um"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\winrt"/>
+					<Add directory="D:\Embarcadero Studio 19.0\Windows Kits 10\include\10.0.19041.0\cppwinrt"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 Atomas/fast"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+					<DistClean command="nmake /NOLOGO /f D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Makefile VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.cpp">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.cpp">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/main.cpp">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
