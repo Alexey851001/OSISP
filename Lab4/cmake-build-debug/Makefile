@@ -127,33 +127,6 @@ app\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\build
 .PHONY : app\fast
 
-ThreadpoolQueueProcessor.obj: ThreadpoolQueueProcessor.cc.obj
-
-.PHONY : ThreadpoolQueueProcessor.obj
-
-# target to build an object file
-ThreadpoolQueueProcessor.cc.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.obj
-.PHONY : ThreadpoolQueueProcessor.cc.obj
-
-ThreadpoolQueueProcessor.i: ThreadpoolQueueProcessor.cc.i
-
-.PHONY : ThreadpoolQueueProcessor.i
-
-# target to preprocess a source file
-ThreadpoolQueueProcessor.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.i
-.PHONY : ThreadpoolQueueProcessor.cc.i
-
-ThreadpoolQueueProcessor.s: ThreadpoolQueueProcessor.cc.s
-
-.PHONY : ThreadpoolQueueProcessor.s
-
-# target to generate assembly for a file
-ThreadpoolQueueProcessor.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\ThreadpoolQueueProcessor.cc.s
-.PHONY : ThreadpoolQueueProcessor.cc.s
-
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -180,6 +153,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\main.cpp.s
 .PHONY : main.cpp.s
+
+queue\Queue.obj: queue\Queue.cpp.obj
+
+.PHONY : queue\Queue.obj
+
+# target to build an object file
+queue\Queue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queue\Queue.cpp.obj
+.PHONY : queue\Queue.cpp.obj
+
+queue\Queue.i: queue\Queue.cpp.i
+
+.PHONY : queue\Queue.i
+
+# target to preprocess a source file
+queue\Queue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queue\Queue.cpp.i
+.PHONY : queue\Queue.cpp.i
+
+queue\Queue.s: queue\Queue.cpp.s
+
+.PHONY : queue\Queue.s
+
+# target to generate assembly for a file
+queue\Queue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queue\Queue.cpp.s
+.PHONY : queue\Queue.cpp.s
 
 queueElem\QueueElem.obj: queueElem\QueueElem.cpp.obj
 
@@ -208,6 +208,33 @@ queueElem\QueueElem.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queueElem\QueueElem.cpp.s
 .PHONY : queueElem\QueueElem.cpp.s
 
+queueHandler\ThreadpoolQueueProcessor.obj: queueHandler\ThreadpoolQueueProcessor.cpp.obj
+
+.PHONY : queueHandler\ThreadpoolQueueProcessor.obj
+
+# target to build an object file
+queueHandler\ThreadpoolQueueProcessor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queueHandler\ThreadpoolQueueProcessor.cpp.obj
+.PHONY : queueHandler\ThreadpoolQueueProcessor.cpp.obj
+
+queueHandler\ThreadpoolQueueProcessor.i: queueHandler\ThreadpoolQueueProcessor.cpp.i
+
+.PHONY : queueHandler\ThreadpoolQueueProcessor.i
+
+# target to preprocess a source file
+queueHandler\ThreadpoolQueueProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queueHandler\ThreadpoolQueueProcessor.cpp.i
+.PHONY : queueHandler\ThreadpoolQueueProcessor.cpp.i
+
+queueHandler\ThreadpoolQueueProcessor.s: queueHandler\ThreadpoolQueueProcessor.cpp.s
+
+.PHONY : queueHandler\ThreadpoolQueueProcessor.s
+
+# target to generate assembly for a file
+queueHandler\ThreadpoolQueueProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\app.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\app.dir\queueHandler\ThreadpoolQueueProcessor.cpp.s
+.PHONY : queueHandler\ThreadpoolQueueProcessor.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -217,15 +244,18 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... app
-	@echo ... ThreadpoolQueueProcessor.obj
-	@echo ... ThreadpoolQueueProcessor.i
-	@echo ... ThreadpoolQueueProcessor.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... queue/Queue.obj
+	@echo ... queue/Queue.i
+	@echo ... queue/Queue.s
 	@echo ... queueElem/QueueElem.obj
 	@echo ... queueElem/QueueElem.i
 	@echo ... queueElem/QueueElem.s
+	@echo ... queueHandler/ThreadpoolQueueProcessor.obj
+	@echo ... queueHandler/ThreadpoolQueueProcessor.i
+	@echo ... queueHandler/ThreadpoolQueueProcessor.s
 .PHONY : help
 
 

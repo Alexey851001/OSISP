@@ -82,19 +82,25 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/ThreadpoolQueueProcessor.cc">
-			<Option target="app"/>
-		</Unit>
-		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/ThreadpoolQueueProcessor.h">
-			<Option target="app"/>
-		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/main.cpp">
+			<Option target="app"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queue/Queue.cpp">
+			<Option target="app"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queue/Queue.h">
 			<Option target="app"/>
 		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.cpp">
 			<Option target="app"/>
 		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h">
+			<Option target="app"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queueHandler/ThreadpoolQueueProcessor.cpp">
+			<Option target="app"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/queueHandler/ThreadpoolQueueProcessor.h">
 			<Option target="app"/>
 		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Lab4/CMakeLists.txt">

@@ -7,7 +7,8 @@
 #include <thread>
 
 #include "queueElem/QueueElem.h"
-#include "ThreadpoolQueueProcessor.h"
+#include "queueHandler/ThreadpoolQueueProcessor.h"
+#include "queue/Queue.h"
 
 #define FILE_PATH_TO_READ  "D:\\5sem\\OSISP\\OSISP\\Lab4\\test.txt"
 #define FILE_PATH_TO_WRITE  "D:\\5sem\\OSISP\\OSISP\\Lab4\\out.txt"
@@ -15,21 +16,10 @@
 
 using namespace std;
 
-CRITICAL_SECTION pushCriticalSection;
-
-void pushInQueue(QueueElem queueElement, queue <QueueElem> *myQueue){
-
-    EnterCriticalSection(&pushCriticalSection);
-
-    myQueue->push(queueElement);
-
-    LeaveCriticalSection(&pushCriticalSection);
-}
 
 int main() {
-    queue <QueueElem> myQueue;
+    Queue myQueue;
     vector<string> buffer;
-    InitializeCriticalSection(&pushCriticalSection);
 
     cout << "Enter count of the threads" << endl;
     int countOfThreadsFromConsole;
@@ -40,6 +30,7 @@ int main() {
         std::cout << "Max number of threads is " << maxThreads << std::endl;
         return 1;
     }
+
     ifstream fin(FILE_PATH_TO_READ);
     long stringCount = 0;
     char str[MAX_STRING_SIZE];
@@ -55,8 +46,8 @@ int main() {
         }
         j++;
     }
-
     fin.close();
+
     int countOfThreads;
     long stringCountForThread;
     int modCount;
@@ -70,18 +61,18 @@ int main() {
         countOfThreads = stringCount;
     }
     for (int i = 0; i < countOfThreads; i++) {
-        QueueElem queueElem;
         if (i != countOfThreads - 1) {
-            queueElem = queueElem.Create(stringCountForThread * i + 1, stringCountForThread * (i + 1));
+            QueueElem queueElem(stringCountForThread * i + 1, stringCountForThread * (i + 1));
+            myQueue.pushInQueue(queueElem);
         } else {
-            queueElem = queueElem.Create(stringCountForThread * i + 1, stringCountForThread * (i + 1) + modCount);
+            QueueElem queueElem(stringCountForThread * i + 1, stringCountForThread * (i + 1) + modCount);
+            myQueue.pushInQueue(queueElem);
         }
-        pushInQueue(queueElem, &myQueue);
     }
 
     ThreadpoolQueueProcessor queueHandler(&myQueue,&buffer);
 
-    queueHandler.Process(&myQueue,countOfThreads);
+    queueHandler.Process(countOfThreads);
     queueHandler.Wait();
 
     int countSort =  stringCount / stringCountForThread - 1;
@@ -101,6 +92,5 @@ int main() {
     }
     fout.close();
 
-    DeleteCriticalSection(&pushCriticalSection);
     return 0;
 }

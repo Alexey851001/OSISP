@@ -6,16 +6,6 @@
 
 #IncludeRegexTransform: 
 
-D:/5sem/OSISP/OSISP/Lab4/ThreadpoolQueueProcessor.h
-windows.h
--
-queue
--
-queueElem/QueueElem.h
-D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h
-queueHandler/QueueHandler.h
-D:/5sem/OSISP/OSISP/Lab4/queueHandler/QueueHandler.h
-
 D:/5sem/OSISP/OSISP/Lab4/main.cpp
 iostream
 -
@@ -33,24 +23,40 @@ thread
 -
 queueElem/QueueElem.h
 D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h
-ThreadpoolQueueProcessor.h
-D:/5sem/OSISP/OSISP/Lab4/ThreadpoolQueueProcessor.h
+queueHandler/ThreadpoolQueueProcessor.h
+D:/5sem/OSISP/OSISP/Lab4/queueHandler/ThreadpoolQueueProcessor.h
+queue/Queue.h
+D:/5sem/OSISP/OSISP/Lab4/queue/Queue.h
 
-D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h
-
-D:/5sem/OSISP/OSISP/Lab4/queueHandler/QueueHandler.h
-iostream
+D:/5sem/OSISP/OSISP/Lab4/queue/Queue.h
+queue
 -
 windows.h
 -
+../queueElem/QueueElem.h
+D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h
+
+D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h
+
+D:/5sem/OSISP/OSISP/Lab4/queueHandler/ThreadpoolQueueProcessor.cpp
+ThreadpoolQueueProcessor.h
+D:/5sem/OSISP/OSISP/Lab4/queueHandler/ThreadpoolQueueProcessor.h
+Windows.h
+-
+iostream
+-
 queue
 -
-vector
+
+D:/5sem/OSISP/OSISP/Lab4/queueHandler/ThreadpoolQueueProcessor.h
+Windows.h
+-
+queue
 -
 string
 -
-fstream
--
 ../queueElem/QueueElem.h
 D:/5sem/OSISP/OSISP/Lab4/queueElem/QueueElem.h
+../queue/Queue.h
+D:/5sem/OSISP/OSISP/Lab4/queue/Queue.h
 

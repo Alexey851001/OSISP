@@ -4,8 +4,3 @@ C
 D
 E
 F
-IRA
-K
-L
-N
-P

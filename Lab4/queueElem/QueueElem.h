@@ -11,12 +11,8 @@ public:
     long startOffset{ 0 };
     long finishOffset{ 0 };
 
-public:    QueueElem Create(long start, long finish) {
-        QueueElem queueElem;
-        queueElem.startOffset = start;
-        queueElem.finishOffset = finish;
-        return queueElem;
-    }
+    QueueElem(long start, long finish);
+
 };
 
 
