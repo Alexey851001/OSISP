@@ -6,6 +6,7 @@
 #define KYRS_CIRCLE_H
 
 #include <list>
+#include <vector>
 #include "../atom/Atom.h"
 
 using namespace std;
@@ -15,10 +16,10 @@ class Circle {
 public:
 
     list <Atom> gameCircle;
+    vector<int> workGroup;
     Atom nextAtom;
 
     Circle();
-    void push(Atom atom, int position);
 
     BOOL checkOverflow();
 

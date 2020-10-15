@@ -11,7 +11,7 @@ const float PI = 3.14;
 
 const int WINDOW_WIDTH = 600;
 const int WINDOW_HEIGHT = 800;
-const COLORREF BACKGROUND = RGB(139, 0, 0);
+const COLORREF BACKGROUND = RGB(0x60,0x7D,0x8B);
 const int COLOR_SHIFT = 30;
 
 #endif //KYRS_MAIN_H

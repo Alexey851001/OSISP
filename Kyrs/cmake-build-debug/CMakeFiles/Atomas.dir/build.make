@@ -118,11 +118,51 @@ CMakeFiles\Atomas.dir\circle\Circle.cpp.s: cmake_force
  /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Atomas.dir\circle\Circle.cpp.s /c D:\5sem\OSISP\OSISP\Kyrs\circle\Circle.cpp
 <<
 
+CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj: CMakeFiles\Atomas.dir\flags.make
+CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj: ..\atom\IAtom.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Atomas.dir\atom\IAtom.cpp.obj /FdCMakeFiles\Atomas.dir\ /FS -c D:\5sem\OSISP\OSISP\Kyrs\atom\IAtom.cpp
+<<
+
+CMakeFiles\Atomas.dir\atom\IAtom.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Atomas.dir/atom/IAtom.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Atomas.dir\atom\IAtom.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\5sem\OSISP\OSISP\Kyrs\atom\IAtom.cpp
+<<
+
+CMakeFiles\Atomas.dir\atom\IAtom.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Atomas.dir/atom/IAtom.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Atomas.dir\atom\IAtom.cpp.s /c D:\5sem\OSISP\OSISP\Kyrs\atom\IAtom.cpp
+<<
+
+CMakeFiles\Atomas.dir\atom\Plus.cpp.obj: CMakeFiles\Atomas.dir\flags.make
+CMakeFiles\Atomas.dir\atom\Plus.cpp.obj: ..\atom\Plus.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Atomas.dir/atom/Plus.cpp.obj"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoCMakeFiles\Atomas.dir\atom\Plus.cpp.obj /FdCMakeFiles\Atomas.dir\ /FS -c D:\5sem\OSISP\OSISP\Kyrs\atom\Plus.cpp
+<<
+
+CMakeFiles\Atomas.dir\atom\Plus.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Atomas.dir/atom/Plus.cpp.i"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe > CMakeFiles\Atomas.dir\atom\Plus.cpp.i @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\5sem\OSISP\OSISP\Kyrs\atom\Plus.cpp
+<<
+
+CMakeFiles\Atomas.dir\atom\Plus.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Atomas.dir/atom/Plus.cpp.s"
+	C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\cl.exe @<<
+ /nologo /TP $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) /FoNUL /FAs /FaCMakeFiles\Atomas.dir\atom\Plus.cpp.s /c D:\5sem\OSISP\OSISP\Kyrs\atom\Plus.cpp
+<<
+
 # Object files for target Atomas
 Atomas_OBJECTS = \
 "CMakeFiles\Atomas.dir\main.cpp.obj" \
 "CMakeFiles\Atomas.dir\atom\Atom.cpp.obj" \
-"CMakeFiles\Atomas.dir\circle\Circle.cpp.obj"
+"CMakeFiles\Atomas.dir\circle\Circle.cpp.obj" \
+"CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj" \
+"CMakeFiles\Atomas.dir\atom\Plus.cpp.obj"
 
 # External object files for target Atomas
 Atomas_EXTERNAL_OBJECTS =
@@ -130,9 +170,11 @@ Atomas_EXTERNAL_OBJECTS =
 Atomas.exe: CMakeFiles\Atomas.dir\main.cpp.obj
 Atomas.exe: CMakeFiles\Atomas.dir\atom\Atom.cpp.obj
 Atomas.exe: CMakeFiles\Atomas.dir\circle\Circle.cpp.obj
+Atomas.exe: CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj
+Atomas.exe: CMakeFiles\Atomas.dir\atom\Plus.cpp.obj
 Atomas.exe: CMakeFiles\Atomas.dir\build.make
 Atomas.exe: CMakeFiles\Atomas.dir\objects1.rsp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Atomas.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable Atomas.exe"
 	"D:\CLion 2020.2.3\bin\cmake\win\bin\cmake.exe" -E vs_link_exe --intdir=CMakeFiles\Atomas.dir --rc="D:\Embarcadero Studio 19.0\Windows Kits 10\bin\10.0.19041.0\x86\rc.exe" --mt="D:\Embarcadero Studio 19.0\Windows Kits 10\bin\10.0.19041.0\x86\mt.exe" --manifests  -- C:\PROGRA~2\MICROS~4\2019\BUILDT~1\VC\Tools\MSVC\1427~1.291\bin\Hostx86\x86\link.exe /nologo @CMakeFiles\Atomas.dir\objects1.rsp @<<
  /out:Atomas.exe /implib:Atomas.lib /pdb:D:\5sem\OSISP\OSISP\Kyrs\cmake-build-debug\Atomas.pdb /version:0.0  /machine:X86 /debug /INCREMENTAL /subsystem:windows  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib 
 <<

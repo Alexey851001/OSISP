@@ -5,14 +5,24 @@
 #include "Circle.h"
 
 Circle::Circle() {
-    for (int i = 0;i < 6;i++) {
-        Atom tempAtom(7);
+    this->workGroup.push_back(1);
+    this->workGroup.push_back(2);
+    this->workGroup.push_back(3);
+    this->workGroup.push_back(4);
+    for (int i = 0; i < 8; i++){
+        int j = (rand()) % 4 ;
+        Atom tempAtom;
+        tempAtom.atomCreate(this->workGroup[j]);
         this->gameCircle.push_front(tempAtom);
     }
-    for (int i = 0;i < 6;i++) {
-        Atom tempAtom(6);
-        this->gameCircle.push_front(tempAtom);
+    generateNext();
+}
+
+void Circle::generateNext() {
+    Atom next;
+    int j = (rand()) % 4;
+    if (j < 4) {
+        next.atomCreate(this->workGroup[j]);
     }
-    Atom next(1);
     this->nextAtom = next;
 }

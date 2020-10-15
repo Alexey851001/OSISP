@@ -1,5 +1,7 @@
 #include <iostream>
 #include <windows.h>
+#include <windowsx.h>
+#include <cmath>
 #include "circle/Circle.h"
 #include "main.h"
 
@@ -51,17 +53,32 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
         }
 
         InvalidateRect(hwnd,NULL,FALSE);
-        Sleep(1000/600);
+        Sleep(5/3);
     }
     return 0;
 }
 
-void GetCoordinate(float *x, float *y, float angle, float rad){
+void getCoordinate(float *x, float *y, float angle, float rad){
     *x = rad * cos(angle);
     *y = rad * sin(angle);
 }
 
-void fillWindow(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+void drawAtom(HDC hdc, Atom atom){
+    HBRUSH hbrush;
+    hbrush = CreateSolidBrush(atom.color);
+    SelectObject(hdc, hbrush);
+    float x = 0;
+    float y = 0;
+    getCoordinate(&x, &y, atom.angle, atom.rad);
+    float left = x + WINDOW_WIDTH/2 - ATOM_DIAMETER / 2;
+    float top = y + WINDOW_HEIGHT/2 - ATOM_DIAMETER / 2;
+    float right = left + ATOM_DIAMETER;
+    float bottom = top + ATOM_DIAMETER;
+    Ellipse(hdc, left, top, right, bottom);
+    DeleteObject(hbrush);
+}
+
+void fillWindow(HWND hwnd)
 {
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(hwnd, &ps);
@@ -87,28 +104,32 @@ void fillWindow(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     float circleDegree = 2*PI;
     float range = circleDegree / circle.gameCircle.size();
 
-    int i = 0;
+    float i = 0;
     for(auto &atom : circle.gameCircle) {
-        hbrush = CreateSolidBrush(atom.color);
-        SelectObject(memHdc, hbrush);
         if (atom.angle < range * i){
-            atom.angle += 0.05;
+            atom.angle += 0.1;
+            if (atom.angle > range*i){
+                atom.angle = range * i;
+            }
         }
         if (atom.rad < (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)){
-            atom.rad += 2;
+            atom.rad += 7;
+            if (atom.rad > (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)){
+                atom.rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
+            }
         }
-
-        float x = 0;
-        float y = 0;
-        GetCoordinate(&x,&y,atom.angle, atom.rad);
-        float left = x + WINDOW_WIDTH/2 - ATOM_DIAMETER / 2;
-        float top = y + WINDOW_HEIGHT/2 - ATOM_DIAMETER / 2;
-        float right = left + ATOM_DIAMETER;
-        float bottom = top + ATOM_DIAMETER;
-        Ellipse(memHdc, left, top, right, bottom);
-        DeleteObject(hbrush);
+        if (atom.angle > range*i){
+            atom.angle -= 0.1;
+            if (atom.angle < range*i){
+                atom.angle = range*i;
+            }
+        }
+        drawAtom(memHdc, atom);
         i++;
     }
+
+    Atom atom = circle.nextAtom;
+    drawAtom(memHdc, atom);
 
     BitBlt(hdc,0,0,clientRect.right,clientRect.bottom,memHdc,0,0,SRCCOPY);
     SelectObject(hdc,oldbmp);
@@ -116,6 +137,37 @@ void fillWindow(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     DeleteDC(memHdc);
 
     EndPaint(hwnd, &ps);
+}
+
+void pushAtom(LPARAM lParam){
+    float xPos = GET_X_LPARAM(lParam);
+    float yPos = GET_Y_LPARAM(lParam);
+    xPos -= WINDOW_WIDTH/2;
+    yPos -= WINDOW_HEIGHT/2;
+    float angle = atan(yPos/xPos);
+    if (xPos < 0){
+        angle += PI;
+    } else {
+        if (yPos < 0){
+            angle += 2*PI;
+        }
+    }
+    auto iterator = circle.gameCircle.begin();
+    float i = 0;
+    BOOL isInsert = FALSE;
+    for (auto &atom : circle.gameCircle){
+        if (atom.angle > angle) {
+            circle.nextAtom.angle = (2*PI / (circle.gameCircle.size() + 1)) * i;
+            circle.gameCircle.insert(iterator, circle.nextAtom);
+            isInsert = TRUE;
+            break;
+        }
+        i++;
+        advance(iterator, 1);
+    }
+    if (!isInsert){
+        circle.gameCircle.insert(circle.gameCircle.begin(), circle.nextAtom);
+    }
 }
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -128,20 +180,20 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
         case WM_PAINT:
         {
-            fillWindow(hwnd, uMsg, wParam, lParam);
+            fillWindow(hwnd);
             return 0;
         }
         case WM_KEYDOWN:
         {
             return 0;
         }
-        case WM_MOUSEWHEEL:
+        case WM_LBUTTONUP:
         {
-
+            pushAtom(lParam);
+            circle.generateNext();
             return 0;
         }
-        case WM_SIZE:
-            return 0;
+
     }
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }

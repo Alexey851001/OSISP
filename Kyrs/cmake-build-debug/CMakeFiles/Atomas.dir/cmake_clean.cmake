@@ -4,6 +4,8 @@ file(REMOVE_RECURSE
   "Atomas.lib"
   "Atomas.pdb"
   "CMakeFiles/Atomas.dir/atom/Atom.cpp.obj"
+  "CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj"
+  "CMakeFiles/Atomas.dir/atom/Plus.cpp.obj"
   "CMakeFiles/Atomas.dir/circle/Circle.cpp.obj"
   "CMakeFiles/Atomas.dir/main.cpp.obj"
 )

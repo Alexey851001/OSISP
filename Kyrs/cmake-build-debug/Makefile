@@ -154,6 +154,60 @@ atom\Atom.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Atom.cpp.s
 .PHONY : atom\Atom.cpp.s
 
+atom\IAtom.obj: atom\IAtom.cpp.obj
+
+.PHONY : atom\IAtom.obj
+
+# target to build an object file
+atom\IAtom.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj
+.PHONY : atom\IAtom.cpp.obj
+
+atom\IAtom.i: atom\IAtom.cpp.i
+
+.PHONY : atom\IAtom.i
+
+# target to preprocess a source file
+atom\IAtom.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\IAtom.cpp.i
+.PHONY : atom\IAtom.cpp.i
+
+atom\IAtom.s: atom\IAtom.cpp.s
+
+.PHONY : atom\IAtom.s
+
+# target to generate assembly for a file
+atom\IAtom.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\IAtom.cpp.s
+.PHONY : atom\IAtom.cpp.s
+
+atom\Plus.obj: atom\Plus.cpp.obj
+
+.PHONY : atom\Plus.obj
+
+# target to build an object file
+atom\Plus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Plus.cpp.obj
+.PHONY : atom\Plus.cpp.obj
+
+atom\Plus.i: atom\Plus.cpp.i
+
+.PHONY : atom\Plus.i
+
+# target to preprocess a source file
+atom\Plus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Plus.cpp.i
+.PHONY : atom\Plus.cpp.i
+
+atom\Plus.s: atom\Plus.cpp.s
+
+.PHONY : atom\Plus.s
+
+# target to generate assembly for a file
+atom\Plus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Plus.cpp.s
+.PHONY : atom\Plus.cpp.s
+
 circle\Circle.obj: circle\Circle.cpp.obj
 
 .PHONY : circle\Circle.obj
@@ -220,6 +274,12 @@ help:
 	@echo ... atom/Atom.obj
 	@echo ... atom/Atom.i
 	@echo ... atom/Atom.s
+	@echo ... atom/IAtom.obj
+	@echo ... atom/IAtom.i
+	@echo ... atom/IAtom.s
+	@echo ... atom/Plus.obj
+	@echo ... atom/Plus.i
+	@echo ... atom/Plus.s
 	@echo ... circle/Circle.obj
 	@echo ... circle/Circle.i
 	@echo ... circle/Circle.s
