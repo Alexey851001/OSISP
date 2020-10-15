@@ -6,7 +6,11 @@
 
 Circle::Circle() {
     for (int i = 0;i < 6;i++) {
-        Atom tempAtom(1);
+        Atom tempAtom(7);
+        this->gameCircle.push_front(tempAtom);
+    }
+    for (int i = 0;i < 6;i++) {
+        Atom tempAtom(6);
         this->gameCircle.push_front(tempAtom);
     }
     Atom next(1);

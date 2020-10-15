@@ -11,6 +11,7 @@
 using namespace std;
 
 class Circle {
+
 public:
 
     list <Atom> gameCircle;

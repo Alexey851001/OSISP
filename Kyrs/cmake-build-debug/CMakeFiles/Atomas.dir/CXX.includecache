@@ -9,6 +9,12 @@
 D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
 windows.h
 -
+string
+-
+map
+-
+../main.h
+D:/5sem/OSISP/OSISP/Kyrs/main.h
 
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
 list
@@ -23,4 +29,8 @@ windows.h
 -
 circle/Circle.h
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
+main.h
+D:/5sem/OSISP/OSISP/Kyrs/main.h
+
+D:/5sem/OSISP/OSISP/Kyrs/main.h
 

@@ -97,6 +97,9 @@
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/main.cpp">
 			<Option target="Atomas"/>
 		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/main.h">
+			<Option target="Atomas"/>
+		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
