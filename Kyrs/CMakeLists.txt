@@ -7,4 +7,4 @@ set(CMAKE_CXX_STANDARD 14)
 add_executable(Atomas WIN32 main.cpp atom/Atom.cpp atom/Atom.h
         circle/Circle.cpp circle/Circle.h
         main.h
-        atom/IAtom.cpp atom/IAtom.h atom/Plus.cpp atom/Plus.h)
+        atom/IAtom.cpp atom/IAtom.h atom/Plus.cpp atom/Plus.h circle/LinkedList.cpp circle/LinkedList.h)

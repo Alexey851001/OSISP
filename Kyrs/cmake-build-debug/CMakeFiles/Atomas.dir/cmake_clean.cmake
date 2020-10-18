@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj"
   "CMakeFiles/Atomas.dir/atom/Plus.cpp.obj"
   "CMakeFiles/Atomas.dir/circle/Circle.cpp.obj"
+  "CMakeFiles/Atomas.dir/circle/LinkedList.cpp.obj"
   "CMakeFiles/Atomas.dir/main.cpp.obj"
 )
 

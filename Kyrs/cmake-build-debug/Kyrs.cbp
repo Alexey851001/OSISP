@@ -106,6 +106,12 @@
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h">
 			<Option target="Atomas"/>
 		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.cpp">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h">
+			<Option target="Atomas"/>
+		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/main.cpp">
 			<Option target="Atomas"/>
 		</Unit>

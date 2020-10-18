@@ -16,12 +16,19 @@ CMakeFiles/Atomas.dir/atom/Plus.cpp.obj
 CMakeFiles/Atomas.dir/circle/Circle.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.cpp
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
+ D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
  D:/5sem/OSISP/OSISP/Kyrs/main.h
+CMakeFiles/Atomas.dir/circle/LinkedList.cpp.obj
+ D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.cpp
+ D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
 CMakeFiles/Atomas.dir/main.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
+ D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
  D:/5sem/OSISP/OSISP/Kyrs/main.cpp
  D:/5sem/OSISP/OSISP/Kyrs/main.h

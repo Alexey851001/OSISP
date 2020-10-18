@@ -6,6 +6,7 @@
 
 void Atom::create(int value){
     this->mass = value;
+    this->isPlusCenter = FALSE;
     this->lathinName = GAME_LATHIN_NAME[value];
     this->name = GAME_NAME[value];
     this->rad = 0;

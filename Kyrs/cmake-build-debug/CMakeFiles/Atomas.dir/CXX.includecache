@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.cpp
+Atom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
+
 D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
 windows.h
 -
@@ -25,18 +29,48 @@ string
 -
 windows.h
 -
+map
+-
+
+D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
+IAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
 
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.cpp
 Circle.h
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
+../atom/Plus.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
 
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
 list
 -
 vector
 -
+ctime
+-
 ../atom/Atom.h
 D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
+LinkedList.h
+D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
+
+D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
+../atom/IAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+
+D:/5sem/OSISP/OSISP/Kyrs/main.cpp
+iostream
+-
+windows.h
+-
+windowsx.h
+-
+cmath
+-
+circle/Circle.h
+D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
+main.h
+D:/5sem/OSISP/OSISP/Kyrs/main.h
 
 D:/5sem/OSISP/OSISP/Kyrs/main.h
 

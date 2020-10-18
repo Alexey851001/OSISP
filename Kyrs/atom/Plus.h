@@ -8,7 +8,7 @@
 
 #include "IAtom.h"
 
-class Plus : IAtom {
+class Plus : public IAtom {
 
 private:
     void create(int value) override;

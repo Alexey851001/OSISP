@@ -235,6 +235,33 @@ circle\Circle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\circle\Circle.cpp.s
 .PHONY : circle\Circle.cpp.s
 
+circle\LinkedList.obj: circle\LinkedList.cpp.obj
+
+.PHONY : circle\LinkedList.obj
+
+# target to build an object file
+circle\LinkedList.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\circle\LinkedList.cpp.obj
+.PHONY : circle\LinkedList.cpp.obj
+
+circle\LinkedList.i: circle\LinkedList.cpp.i
+
+.PHONY : circle\LinkedList.i
+
+# target to preprocess a source file
+circle\LinkedList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\circle\LinkedList.cpp.i
+.PHONY : circle\LinkedList.cpp.i
+
+circle\LinkedList.s: circle\LinkedList.cpp.s
+
+.PHONY : circle\LinkedList.s
+
+# target to generate assembly for a file
+circle\LinkedList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\circle\LinkedList.cpp.s
+.PHONY : circle\LinkedList.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -283,6 +310,9 @@ help:
 	@echo ... circle/Circle.obj
 	@echo ... circle/Circle.i
 	@echo ... circle/Circle.s
+	@echo ... circle/LinkedList.obj
+	@echo ... circle/LinkedList.i
+	@echo ... circle/LinkedList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

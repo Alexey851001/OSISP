@@ -8,10 +8,12 @@
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 Circle circle;
+BOOL isPlusAction;
 
 
 int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
 {
+    isPlusAction = FALSE;
     const CHAR *CLASS_NAME = "Window Class";
 
     WNDCLASS windowClass = { };
@@ -19,6 +21,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
     windowClass.lpfnWndProc = WindowProc;
     windowClass.hInstance = hInstance;
     windowClass.lpszClassName = CLASS_NAME;
+    windowClass.hCursor = LoadCursor(NULL, IDC_ARROW);
 
     RegisterClass(&windowClass);
 
@@ -63,19 +66,141 @@ void getCoordinate(float *x, float *y, float angle, float rad){
     *y = rad * sin(angle);
 }
 
-void drawAtom(HDC hdc, Atom atom){
+void drawAtom(HDC hdc, IAtom *atom){
     HBRUSH hbrush;
-    hbrush = CreateSolidBrush(atom.color);
-    SelectObject(hdc, hbrush);
+    hbrush = CreateSolidBrush(atom->color);
+
+    HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, hbrush);
     float x = 0;
     float y = 0;
-    getCoordinate(&x, &y, atom.angle, atom.rad);
+    getCoordinate(&x, &y, atom->angle, atom->rad);
     float left = x + WINDOW_WIDTH/2 - ATOM_DIAMETER / 2;
     float top = y + WINDOW_HEIGHT/2 - ATOM_DIAMETER / 2;
     float right = left + ATOM_DIAMETER;
     float bottom = top + ATOM_DIAMETER;
     Ellipse(hdc, left, top, right, bottom);
+    SelectObject(hdc, oldBrush);
     DeleteObject(hbrush);
+}
+
+void pushAtom(float angle, IAtom *insertAtom){
+
+    BOOL isInsert = FALSE;
+    for (int i = 0; i < circle.gameCircle.getSize(); i++){
+        IAtom* atom = circle.gameCircle.getValue(i);
+        if (atom->angle > angle) {
+            insertAtom->angle = (2*PI / (circle.gameCircle.getSize() + 1)) * i;
+            circle.gameCircle.insert(i, insertAtom);
+            isInsert = TRUE;
+            break;
+        }
+    }
+    if (!isInsert){
+        circle.gameCircle.insert(0, circle.nextAtom);
+    }
+}
+
+void plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom){
+
+    if((tempAtom->angle != plusAtom->angle) || (stepAtom->angle != plusAtom->angle)){
+
+        if (tempAtom->angle < plusAtom->angle) {
+            tempAtom->angle += PLUS_ANIMATION_SPEED;
+            if (tempAtom->angle > plusAtom->angle) {
+                tempAtom->angle = plusAtom->angle;
+            }
+        }
+        if (tempAtom->angle > plusAtom->angle) {
+            tempAtom->angle -= PLUS_ANIMATION_SPEED;
+            if (tempAtom->angle < plusAtom->angle) {
+                tempAtom->angle = plusAtom->angle;
+            }
+        }
+        if (stepAtom->angle < plusAtom->angle) {
+            stepAtom->angle += PLUS_ANIMATION_SPEED;
+            if (stepAtom->angle > plusAtom->angle) {
+                stepAtom->angle = plusAtom->angle;
+            }
+        }
+        if (stepAtom->angle > plusAtom->angle) {
+            stepAtom->angle -= PLUS_ANIMATION_SPEED;
+            if (stepAtom->angle < plusAtom->angle) {
+                stepAtom->angle = plusAtom->angle;
+            }
+        }
+    } else {
+        circle.gameCircle.remove(tempAtom);
+        circle.gameCircle.remove(stepAtom);
+        Atom *atom = new Atom();
+        atom->atomCreate(tempAtom->mass + 1);
+        atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
+        atom->isPlusCenter = TRUE;
+        pushAtom(plusAtom->angle, atom);
+        circle.gameCircle.remove(plusAtom);
+        isPlusAction = FALSE;
+    }
+}
+
+bool plusAction(int position, IAtom *atom){
+    IAtom *tempAtom = circle.gameCircle.getValue(position+1);
+    IAtom *stepAtom = circle.gameCircle.getValue(position - 1);
+    if (tempAtom->mass == stepAtom->mass){
+        plusAnimation(atom, tempAtom, stepAtom);
+        return TRUE;
+    }
+    return FALSE;
+}
+
+void checkPlusAction(){
+    bool find = FALSE;
+    for (int i = 0; i < circle.gameCircle.getSize(); i++) {
+        IAtom* atom = circle.gameCircle.getValue(i);
+        if (atom->mass == 0) {
+            if(plusAction(i, atom)){
+                find = TRUE;
+            }
+        }
+    }
+    if (!find){
+        isPlusAction = FALSE;
+    }
+}
+
+void moveAnimation(HDC memHdc){
+    float circleDegree = 2 * PI;
+    float range = circleDegree / circle.gameCircle.getSize();
+
+
+    for (int i = 0; i < circle.gameCircle.getSize(); i++) {
+        IAtom* atom = circle.gameCircle.getValue(i);
+        if (!isPlusAction) {
+            if (atom->angle < range * i) {
+                atom->angle += 0.1;
+                if (atom->angle > range * i) {
+                    atom->angle = range * i;
+                }
+            }
+            if (atom->angle > range * i) {
+                atom->angle -= 0.1;
+                if (atom->angle < range * i) {
+                    atom->angle = range * i;
+                }
+            }
+        } else {
+            checkPlusAction();
+        }
+        if (atom->rad < (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
+            atom->rad += 15;
+            if (atom->rad > (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
+                atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
+            }
+        }
+
+        drawAtom(memHdc, atom);
+    }
+
+    IAtom *atom = circle.nextAtom;
+    drawAtom(memHdc, atom);
 }
 
 void fillWindow(HWND hwnd)
@@ -90,46 +215,24 @@ void fillWindow(HWND hwnd)
     HBITMAP bmp = CreateCompatibleBitmap(hdc, clientRect.right,clientRect.bottom);
     HBITMAP oldbmp = (HBITMAP)SelectObject(memHdc, bmp);
 
-    FillRect(memHdc, &ps.rcPaint, CreateSolidBrush(BACKGROUND));
+    HBRUSH backgroundBrush = CreateSolidBrush(BACKGROUND);
+
+    FillRect(memHdc, &ps.rcPaint, backgroundBrush);
+
+    DeleteObject(backgroundBrush);
 
     HBRUSH hbrush = CreateSolidBrush(BACKGROUND-COLOR_SHIFT);
-    SelectObject(memHdc,hbrush);
+
+    HBRUSH oldBrush = (HBRUSH)SelectObject(memHdc,hbrush);
     float circleLeft = WINDOW_WIDTH/2 - GAME_CIRCLE_RADIUS;
     float circleTop = WINDOW_HEIGHT/2 - GAME_CIRCLE_RADIUS;
     float circleRight = WINDOW_WIDTH/2 + GAME_CIRCLE_RADIUS;
     float circleBottom = WINDOW_HEIGHT/2 + GAME_CIRCLE_RADIUS;
     Ellipse(memHdc, circleLeft, circleTop, circleRight, circleBottom);
+    SelectObject(memHdc,oldBrush);
     DeleteObject(hbrush);
 
-    float circleDegree = 2*PI;
-    float range = circleDegree / circle.gameCircle.size();
-
-    float i = 0;
-    for(auto &atom : circle.gameCircle) {
-        if (atom.angle < range * i){
-            atom.angle += 0.1;
-            if (atom.angle > range*i){
-                atom.angle = range * i;
-            }
-        }
-        if (atom.rad < (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)){
-            atom.rad += 7;
-            if (atom.rad > (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)){
-                atom.rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
-            }
-        }
-        if (atom.angle > range*i){
-            atom.angle -= 0.1;
-            if (atom.angle < range*i){
-                atom.angle = range*i;
-            }
-        }
-        drawAtom(memHdc, atom);
-        i++;
-    }
-
-    Atom atom = circle.nextAtom;
-    drawAtom(memHdc, atom);
+    moveAnimation(memHdc);
 
     BitBlt(hdc,0,0,clientRect.right,clientRect.bottom,memHdc,0,0,SRCCOPY);
     SelectObject(hdc,oldbmp);
@@ -139,7 +242,7 @@ void fillWindow(HWND hwnd)
     EndPaint(hwnd, &ps);
 }
 
-void pushAtom(LPARAM lParam){
+float getAngle(LPARAM lParam){
     float xPos = GET_X_LPARAM(lParam);
     float yPos = GET_Y_LPARAM(lParam);
     xPos -= WINDOW_WIDTH/2;
@@ -152,22 +255,7 @@ void pushAtom(LPARAM lParam){
             angle += 2*PI;
         }
     }
-    auto iterator = circle.gameCircle.begin();
-    float i = 0;
-    BOOL isInsert = FALSE;
-    for (auto &atom : circle.gameCircle){
-        if (atom.angle > angle) {
-            circle.nextAtom.angle = (2*PI / (circle.gameCircle.size() + 1)) * i;
-            circle.gameCircle.insert(iterator, circle.nextAtom);
-            isInsert = TRUE;
-            break;
-        }
-        i++;
-        advance(iterator, 1);
-    }
-    if (!isInsert){
-        circle.gameCircle.insert(circle.gameCircle.begin(), circle.nextAtom);
-    }
+    return angle;
 }
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
@@ -189,8 +277,14 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         }
         case WM_LBUTTONUP:
         {
-            pushAtom(lParam);
-            circle.generateNext();
+            float angle = getAngle(lParam);
+            pushAtom(angle, circle.nextAtom);
+            isPlusAction = TRUE;
+            //if (!circle.checkOverflow()) {
+                circle.generateNext();
+            //} else {
+              //  PostMessage(hwnd,WM_QUIT,wParam,lParam);
+            //}
             return 0;
         }
 

@@ -7,24 +7,25 @@
 
 #include <list>
 #include <vector>
+#include <ctime>
 #include "../atom/Atom.h"
+#include "LinkedList.h"
 
 using namespace std;
 
 class Circle {
 
 public:
+    LinkedList gameCircle;
 
-    list <Atom> gameCircle;
     vector<int> workGroup;
-    Atom nextAtom;
+    IAtom *nextAtom;
 
     Circle();
 
-    BOOL checkOverflow();
+    bool checkOverflow();
 
     void generateNext();
-
 };
 
 
