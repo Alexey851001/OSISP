@@ -34,7 +34,7 @@ void Circle::generateNext() {
         this->nextAtom = next;
     } else {
         Plus *next = new Plus();
-        next->atomCreate(j-4);
+        next->atomCreate(j - 4);
         this->nextAtom = next;
     }
 }

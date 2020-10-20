@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.cpp">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h">
+			<Option target="Atomas"/>
+		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.cpp">
 			<Option target="Atomas"/>
 		</Unit>

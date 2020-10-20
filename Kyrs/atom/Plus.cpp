@@ -16,4 +16,6 @@ void Plus::atomCreate(int value) {
     this->create(value);
 }
 
-Plus::Plus() {}
+Plus::Plus() = default;
+
+//Plus::~Plus() = default;

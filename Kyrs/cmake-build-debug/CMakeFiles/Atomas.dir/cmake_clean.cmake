@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "Atomas.exe.manifest"
   "Atomas.lib"
   "Atomas.pdb"
+  "CMakeFiles/Atomas.dir/application/Applicaton.cpp.obj"
   "CMakeFiles/Atomas.dir/atom/Atom.cpp.obj"
   "CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj"
   "CMakeFiles/Atomas.dir/atom/Plus.cpp.obj"

@@ -25,6 +25,7 @@ public:
 
     COLORREF color;
     int mass;
+    bool isPlusCenter;
 
     float angle;
     float rad;
@@ -32,6 +33,8 @@ public:
     string name;
 
     virtual void create(int value) = 0;
+
+   // virtual ~IAtom() = 0;
 };
 
 

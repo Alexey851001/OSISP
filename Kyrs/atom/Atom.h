@@ -9,7 +9,6 @@
 #include <windows.h>
 #include <string>
 #include <map>
-#include "../main.h"
 #include "IAtom.h"
 
 using namespace std;
@@ -31,11 +30,12 @@ private:
 public:
 
     string lathinName;
-    bool isPlusCenter;
 
     void atomCreate(int mass);
 
     Atom();
+
+   // ~Atom() override;
 
 };
 

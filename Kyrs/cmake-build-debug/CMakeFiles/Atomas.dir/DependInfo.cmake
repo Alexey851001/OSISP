@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/application/Applicaton.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/Atom.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/Plus.cpp.obj"

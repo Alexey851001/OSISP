@@ -49,11 +49,8 @@ void LinkedList::insert(int position, IAtom *atom) {
         push_front(atom);
         return;
     }
-    if(position == listSize){
+    if(position >= listSize){
         push_back(atom);
-        return;
-    }
-    if(position > listSize){
         return;
     }
     linkedList* temp = head;
@@ -100,5 +97,6 @@ void LinkedList::remove(IAtom *atom) {
         tail = temp->prev;
     }
     listSize--;
+    //delete temp->atom;
     free(temp);
 }

@@ -19,6 +19,8 @@ public:
     void atomCreate(int value);
 
     Plus();
+
+    //~Plus() override;
 };
 
 

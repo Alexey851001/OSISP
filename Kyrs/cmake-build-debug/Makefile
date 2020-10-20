@@ -127,6 +127,33 @@ Atomas\fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\build
 .PHONY : Atomas\fast
 
+application\Applicaton.obj: application\Applicaton.cpp.obj
+
+.PHONY : application\Applicaton.obj
+
+# target to build an object file
+application\Applicaton.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj
+.PHONY : application\Applicaton.cpp.obj
+
+application\Applicaton.i: application\Applicaton.cpp.i
+
+.PHONY : application\Applicaton.i
+
+# target to preprocess a source file
+application\Applicaton.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\application\Applicaton.cpp.i
+.PHONY : application\Applicaton.cpp.i
+
+application\Applicaton.s: application\Applicaton.cpp.s
+
+.PHONY : application\Applicaton.s
+
+# target to generate assembly for a file
+application\Applicaton.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\application\Applicaton.cpp.s
+.PHONY : application\Applicaton.cpp.s
+
 atom\Atom.obj: atom\Atom.cpp.obj
 
 .PHONY : atom\Atom.obj
@@ -298,6 +325,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... Atomas
+	@echo ... application/Applicaton.obj
+	@echo ... application/Applicaton.i
+	@echo ... application/Applicaton.s
 	@echo ... atom/Atom.obj
 	@echo ... atom/Atom.i
 	@echo ... atom/Atom.s
