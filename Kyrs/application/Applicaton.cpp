@@ -27,31 +27,21 @@ void Applicaton::pushAtom(float angle, IAtom *insertAtom){
 
 void Applicaton::plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom){
 
-    if((tempAtom->angle != plusAtom->angle) || (stepAtom->angle != plusAtom->angle)){
+    int i = 0;//abs(tempAtom->angle-plusAtom->angle) > abs(stepAtom->angle - plusAtom->angle) ?
+    float relativeAngle = min(abs(tempAtom->angle-plusAtom->angle),abs(stepAtom->angle - plusAtom->angle));
+    //if((tempAtom->angle != plusAtom->angle) || (stepAtom->angle != plusAtom->angle)){
+    if (relativeAngle != 0){
+        float plusAnimationSpeed = relativeAngle/5;
+        if (plusAnimationSpeed < 0.001)
+            plusAnimationSpeed = 0.05;
 
-        if (tempAtom->angle < plusAtom->angle) {
-            tempAtom->angle += PLUS_ANIMATION_SPEED;
-            if (tempAtom->angle > plusAtom->angle) {
-                tempAtom->angle = plusAtom->angle;
-            }
-        }
-        if (tempAtom->angle > plusAtom->angle) {
-            tempAtom->angle -= PLUS_ANIMATION_SPEED;
-            if (tempAtom->angle < plusAtom->angle) {
-                tempAtom->angle = plusAtom->angle;
-            }
-        }
-        if (stepAtom->angle < plusAtom->angle) {
-            stepAtom->angle += PLUS_ANIMATION_SPEED;
-            if (stepAtom->angle > plusAtom->angle) {
-                stepAtom->angle = plusAtom->angle;
-            }
-        }
-        if (stepAtom->angle > plusAtom->angle) {
-            stepAtom->angle -= PLUS_ANIMATION_SPEED;
-            if (stepAtom->angle < plusAtom->angle) {
-                stepAtom->angle = plusAtom->angle;
-            }
+        tempAtom->angle -= plusAnimationSpeed;
+        stepAtom->angle += plusAnimationSpeed;
+        relativeAngle -= plusAnimationSpeed;
+        if (relativeAngle < 0){
+            tempAtom->angle -= relativeAngle;
+            stepAtom->angle += relativeAngle;
+            relativeAngle = 0;
         }
     } else {
         int mass = 0;
@@ -66,8 +56,9 @@ void Applicaton::plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom
         atom->atomCreate(mass);
         atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
         atom->isPlusCenter = TRUE;
-        this->pushAtom(plusAtom->angle, atom);
+        this->addPlusResult(plusAtom->angle, atom);
         this->circle.gameCircle.remove(plusAtom);
+        Sleep(10);
     }
 }
 
@@ -101,29 +92,37 @@ void Applicaton::checkPlusAction(){
 
 void Applicaton::update() {
     float circleDegree = 2 * PI;
+    BOOL isCurrentAngle = TRUE;
+    BOOL isCurrentRadius = TRUE;
     float range = circleDegree / circle.gameCircle.getSize();
     for (int i = 0; i < circle.gameCircle.getSize(); i++) {
         IAtom *atom = circle.gameCircle.getValue(i);
         if(!this->isPlusAction) {
             if (atom->angle < range * i) {
                 atom->angle += 0.1;
+                isCurrentAngle = FALSE;
                 if (atom->angle > range * i) {
                     atom->angle = range * i;
                 }
             }
             if (atom->angle > range * i) {
                 atom->angle -= 0.1;
+                isCurrentAngle = FALSE;
                 if (atom->angle < range * i) {
                     atom->angle = range * i;
                 }
             }
-        }
-        if (atom->rad < (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
-            atom->rad += 15;
-            if (atom->rad > (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
-                atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
+
+            if (atom->rad < (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
+                atom->rad += 15;
+                isCurrentRadius = FALSE;
+                if (atom->rad > (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
+                    atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
+                }
             }
         }
+    }
+    if(isCurrentRadius && isCurrentAngle) {
         this->checkPlusAction();
     }
 }
@@ -158,4 +157,20 @@ void Applicaton::generateNextAtom() {
 void Applicaton::insertAtom(int position, IAtom* atom) {
     this->circle.gameCircle.insert(position,atom);
 
+}
+
+void Applicaton::addPlusResult(float angle, IAtom *insertAtom) {
+    BOOL isInsert = FALSE;
+    for (int i = 0; i < this->getCircleSize(); i++){
+        IAtom* atom = this->getCircleValue(i);
+        if (atom->angle > angle) {
+            insertAtom->angle = angle;
+            this->insertAtom(i, insertAtom);
+            isInsert = TRUE;
+            break;
+        }
+    }
+    if (!isInsert){
+        this->insertAtom(0, insertAtom);
+    }
 }

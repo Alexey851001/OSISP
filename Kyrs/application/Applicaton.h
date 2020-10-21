@@ -16,7 +16,6 @@
 #define WINDOW_HEIGHT 800
 #define BACKGROUND RGB(0x60,0x7D,0x8B)
 #define COLOR_SHIFT 30
-#define PLUS_ANIMATION_SPEED 0.005
 
 class Applicaton {
 public:
@@ -26,6 +25,7 @@ public:
     float circleBottom;
     HBRUSH backgroundBrush;
     HBRUSH circleBrush;
+    HFONT atomFont;
 
     int getCircleSize();
 
@@ -42,6 +42,7 @@ public:
 
     ~Applicaton();
 private:
+    void addPlusResult(float angle, IAtom *insertAtom);
     void plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom);
     BOOL plusAction(int position, IAtom *atom);
     void checkPlusAction();

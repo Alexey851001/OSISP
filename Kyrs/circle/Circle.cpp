@@ -11,6 +11,7 @@ Circle::Circle() {
     this->workGroup.push_back(2);
     this->workGroup.push_back(3);
     this->workGroup.push_back(4);
+    srand(time(NULL));
     for (int i = 0; i < 8; i++){
 
         int j = (rand()) % 4 ;
