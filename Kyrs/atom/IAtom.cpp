@@ -3,3 +3,5 @@
 //
 
 #include "IAtom.h"
+
+IAtom::~IAtom() {}

@@ -34,7 +34,7 @@ public:
 
     virtual void create(int value) = 0;
 
-   // virtual ~IAtom() = 0;
+    virtual ~IAtom() = 0;
 };
 
 

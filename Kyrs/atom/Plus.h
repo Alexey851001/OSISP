@@ -20,7 +20,7 @@ public:
 
     Plus();
 
-    //~Plus() override;
+    ~Plus() override;
 };
 
 

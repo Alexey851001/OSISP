@@ -44,5 +44,5 @@ int Atom::thirdHash(string str) {
 
 Atom::Atom() {}
 
-//Atom::~Atom() {
+Atom::~Atom() {}
 

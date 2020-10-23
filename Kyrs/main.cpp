@@ -55,7 +55,8 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
 
         applicaton.update();
         InvalidateRect(hwnd,NULL,FALSE);
-        Sleep(5/3);
+
+        Sleep(SLEEP_TIME);
     }
     return 0;
 }
@@ -68,8 +69,9 @@ void getCoordinate(float *x, float *y, float angle, float rad){
 void drawAtom(HDC hdc, IAtom *atom){
     HBRUSH hbrush;
     hbrush = CreateSolidBrush(atom->color);
-
     HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, hbrush);
+    HFONT oldFont = (HFONT)SelectObject(hdc, applicaton.atomFont);
+
     float x = 0;
     float y = 0;
     getCoordinate(&x, &y, atom->angle, atom->rad);
@@ -78,7 +80,21 @@ void drawAtom(HDC hdc, IAtom *atom){
     float right = left + ATOM_DIAMETER;
     float bottom = top + ATOM_DIAMETER;
     Ellipse(hdc, left, top, right, bottom);
+
+    RECT rect;
+    SetRect(&rect,left,top,right,bottom);
+    char name[20];
+    strcpy_s(name, atom->name.size()+1,atom->name.c_str());
+    strcat_s(name, 20, "\n");
+    strcat_s(name,  20, to_string(atom->mass).c_str());
+
+    SetTextColor(hdc, WHITE);
+    SetBkMode(hdc, TRANSPARENT);
+    DrawText(hdc,name, -1, &rect, DT_CENTER);
+    SetBkMode(hdc, OPAQUE);
+
     SelectObject(hdc, oldBrush);
+    SelectObject(hdc, oldFont);
     DeleteObject(hbrush);
 }
 

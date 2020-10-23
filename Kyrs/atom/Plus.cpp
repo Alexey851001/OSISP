@@ -18,4 +18,4 @@ void Plus::atomCreate(int value) {
 
 Plus::Plus() = default;
 
-//Plus::~Plus() = default;
+Plus::~Plus() = default;

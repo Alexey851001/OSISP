@@ -35,7 +35,7 @@ public:
 
     Atom();
 
-   // ~Atom() override;
+    ~Atom() override;
 
 };
 

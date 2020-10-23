@@ -97,6 +97,6 @@ void LinkedList::remove(IAtom *atom) {
         tail = temp->prev;
     }
     listSize--;
-    //delete temp->atom;
+    delete temp->atom;
     free(temp);
 }

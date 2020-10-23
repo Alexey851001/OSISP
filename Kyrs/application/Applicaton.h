@@ -12,8 +12,14 @@
 #define ATOM_DIAMETER 40
 #define PI 3.14
 
+#define ANGLE_SPEED 0.1
+#define RADIUS_SPEED 15
+
 #define WINDOW_WIDTH 600
 #define WINDOW_HEIGHT 800
+#define SLEEP_TIME 5/3
+
+#define WHITE RGB(255,255,255)
 #define BACKGROUND RGB(0x60,0x7D,0x8B)
 #define COLOR_SHIFT 30
 
@@ -26,6 +32,7 @@ public:
     HBRUSH backgroundBrush;
     HBRUSH circleBrush;
     HFONT atomFont;
+    HPEN atomPen;
 
     int getCircleSize();
 

@@ -9,6 +9,8 @@
 D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.cpp
 Applicaton.h
 D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h
+../atom/Plus.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
 
 D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h
 windows.h
@@ -35,6 +37,10 @@ windows.h
 -
 map
 -
+
+D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
+IAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
 
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
 list

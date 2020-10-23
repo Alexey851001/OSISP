@@ -12,13 +12,13 @@ Circle::Circle() {
     this->workGroup.push_back(3);
     this->workGroup.push_back(4);
     srand(time(NULL));
-    for (int i = 0; i < 8; i++){
+    /*for (int i = 0; i < 8; i++){
 
         int j = (rand()) % 4 ;
         Atom *tempAtom = new Atom();
         tempAtom->atomCreate(this->workGroup[j]);
         this->gameCircle.insert(0,tempAtom);
-    }
+    }*/
     generateNext();
 }
 
@@ -28,6 +28,7 @@ bool Circle::checkOverflow() {
 
 
 void Circle::generateNext() {
+    srand(time(NULL));
     int j = (rand()) % 6;
     if (j < 4) {
         Atom *next = new Atom();

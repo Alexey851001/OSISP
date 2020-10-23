@@ -5,6 +5,7 @@ CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\application\Applicaton.
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\application\Applicaton.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\Atom.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\Plus.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\circle\Circle.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\circle\LinkedList.h
 
