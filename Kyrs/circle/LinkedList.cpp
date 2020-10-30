@@ -12,7 +12,7 @@ LinkedList::LinkedList() {
 int LinkedList::getSize() {
     return listSize;
 }
-void LinkedList::push_front(IAtom * atom) {
+void LinkedList::push_front(BaseAtom * atom) {
     linkedList* node = new linkedList;
     node->atom = atom;
     node->next = head;
@@ -23,7 +23,7 @@ void LinkedList::push_front(IAtom * atom) {
     listSize++;
 }
 
-void LinkedList::push_back(IAtom *atom) {
+void LinkedList::push_back(BaseAtom *atom) {
     linkedList* node = new linkedList;
     node->atom = atom;
     node->next = head;
@@ -34,7 +34,7 @@ void LinkedList::push_back(IAtom *atom) {
     listSize++;
 }
 
-void LinkedList::insert(int position, IAtom *atom) {
+void LinkedList::insert(int position, BaseAtom *atom) {
     linkedList* node = new linkedList;
     node->atom = atom;
     if (listSize == 0) {
@@ -64,7 +64,7 @@ void LinkedList::insert(int position, IAtom *atom) {
     listSize++;
 }
 
-IAtom * LinkedList::getValue(int position) {
+BaseAtom * LinkedList::getValue(int position) {
     if(position < 0){
         position += listSize;
     }
@@ -78,7 +78,7 @@ IAtom * LinkedList::getValue(int position) {
     return temp->atom;
 }
 
-void LinkedList::remove(IAtom *atom) {
+void LinkedList::remove(BaseAtom *atom) {
     linkedList* temp = head;
     int count = 0;
     while(temp->atom != atom){

@@ -181,32 +181,59 @@ atom\Atom.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Atom.cpp.s
 .PHONY : atom\Atom.cpp.s
 
-atom\IAtom.obj: atom\IAtom.cpp.obj
+atom\BaseAtom.obj: atom\BaseAtom.cpp.obj
 
-.PHONY : atom\IAtom.obj
+.PHONY : atom\BaseAtom.obj
 
 # target to build an object file
-atom\IAtom.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj
-.PHONY : atom\IAtom.cpp.obj
+atom\BaseAtom.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\BaseAtom.cpp.obj
+.PHONY : atom\BaseAtom.cpp.obj
 
-atom\IAtom.i: atom\IAtom.cpp.i
+atom\BaseAtom.i: atom\BaseAtom.cpp.i
 
-.PHONY : atom\IAtom.i
+.PHONY : atom\BaseAtom.i
 
 # target to preprocess a source file
-atom\IAtom.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\IAtom.cpp.i
-.PHONY : atom\IAtom.cpp.i
+atom\BaseAtom.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\BaseAtom.cpp.i
+.PHONY : atom\BaseAtom.cpp.i
 
-atom\IAtom.s: atom\IAtom.cpp.s
+atom\BaseAtom.s: atom\BaseAtom.cpp.s
 
-.PHONY : atom\IAtom.s
+.PHONY : atom\BaseAtom.s
 
 # target to generate assembly for a file
-atom\IAtom.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\IAtom.cpp.s
-.PHONY : atom\IAtom.cpp.s
+atom\BaseAtom.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\BaseAtom.cpp.s
+.PHONY : atom\BaseAtom.cpp.s
+
+atom\Minus.obj: atom\Minus.cpp.obj
+
+.PHONY : atom\Minus.obj
+
+# target to build an object file
+atom\Minus.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Minus.cpp.obj
+.PHONY : atom\Minus.cpp.obj
+
+atom\Minus.i: atom\Minus.cpp.i
+
+.PHONY : atom\Minus.i
+
+# target to preprocess a source file
+atom\Minus.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Minus.cpp.i
+.PHONY : atom\Minus.cpp.i
+
+atom\Minus.s: atom\Minus.cpp.s
+
+.PHONY : atom\Minus.s
+
+# target to generate assembly for a file
+atom\Minus.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Atomas.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\Atomas.dir\atom\Minus.cpp.s
+.PHONY : atom\Minus.cpp.s
 
 atom\Plus.obj: atom\Plus.cpp.obj
 
@@ -331,9 +358,12 @@ help:
 	@echo ... atom/Atom.obj
 	@echo ... atom/Atom.i
 	@echo ... atom/Atom.s
-	@echo ... atom/IAtom.obj
-	@echo ... atom/IAtom.i
-	@echo ... atom/IAtom.s
+	@echo ... atom/BaseAtom.obj
+	@echo ... atom/BaseAtom.i
+	@echo ... atom/BaseAtom.s
+	@echo ... atom/Minus.obj
+	@echo ... atom/Minus.i
+	@echo ... atom/Minus.s
 	@echo ... atom/Plus.obj
 	@echo ... atom/Plus.i
 	@echo ... atom/Plus.s

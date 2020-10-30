@@ -7,6 +7,10 @@
 
 LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
+LRESULT CALLBACK MenuWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
+
+HWND menuHwnd, hwnd;
+
 Applicaton applicaton;
 
 
@@ -23,7 +27,18 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
 
     RegisterClass(&windowClass);
 
-    HWND hwnd = CreateWindowEx(
+    const CHAR *MENU_NAME = "Menu Class";
+
+    WNDCLASS menuClass = { };
+
+    menuClass.lpfnWndProc = MenuWindowProc;
+    menuClass.hInstance = hInstance;
+    menuClass.lpszClassName = MENU_NAME;
+    menuClass.hCursor = LoadCursor(NULL, IDC_ARROW);
+
+    RegisterClass(&menuClass);
+
+    hwnd = CreateWindowEx(
             0,
             CLASS_NAME,
             "Atomas",
@@ -40,8 +55,21 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
         return 1;
     }
 
+    menuHwnd = CreateWindowEx(
+            0,
+            MENU_NAME,
+            "Atomas",
+            WS_OVERLAPPEDWINDOW & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX,
+            CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_WIDTH, WINDOW_HEIGHT,
+            NULL,
+            NULL,
+            hInstance,
+            NULL
+    );
+
+   // ShowWindow(menuHwnd, nShowCmd);
     ShowWindow(hwnd, nShowCmd);
-    SetTimer(hwnd, 1, 100, NULL);
+
     MSG msg = { };
     BOOL isDone = FALSE;
     while (!isDone) {
@@ -66,7 +94,7 @@ void getCoordinate(float *x, float *y, float angle, float rad){
     *y = rad * sin(angle);
 }
 
-void drawAtom(HDC hdc, IAtom *atom){
+void drawAtom(HDC hdc, BaseAtom *atom){
     HBRUSH hbrush;
     hbrush = CreateSolidBrush(atom->color);
     HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, hbrush);
@@ -82,11 +110,15 @@ void drawAtom(HDC hdc, IAtom *atom){
     Ellipse(hdc, left, top, right, bottom);
 
     RECT rect;
-    SetRect(&rect,left,top,right,bottom);
     char name[20];
     strcpy_s(name, atom->name.size()+1,atom->name.c_str());
-    strcat_s(name, 20, "\n");
-    strcat_s(name,  20, to_string(atom->mass).c_str());
+    if (atom->mass > 0) {
+        SetRect(&rect,left,top,right,bottom);
+        strcat_s(name, 20, "\n");
+        strcat_s(name, 20, to_string(atom->mass).c_str());
+    } else {
+        SetRect(&rect,left,top + ATOM_DIAMETER / 4,right,bottom - ATOM_DIAMETER / 4);
+    }
 
     SetTextColor(hdc, WHITE);
     SetBkMode(hdc, TRANSPARENT);
@@ -162,18 +194,56 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         }
         case WM_KEYDOWN:
         {
-
             return 0;
         }
         case WM_LBUTTONUP:
         {
             float angle = getAngle(lParam);
-            applicaton.pushAtom(angle, applicaton.getNextAtom());
-            //if (!circle.checkOverflow()) {
-                applicaton.generateNextAtom();
-            //} else {
-              //  PostMessage(hwnd,WM_QUIT,wParam,lParam);
-            //}
+            if (applicaton.getNextAtom()->mass != -1) {
+                if (applicaton.getNextAtom()->isMinusCenter && GET_X_LPARAM(lParam) < (WINDOW_WIDTH + ATOM_DIAMETER)/2 &&
+                        GET_X_LPARAM(lParam) > (WINDOW_WIDTH - ATOM_DIAMETER)/2 &&
+                        GET_Y_LPARAM(lParam) < (WINDOW_HEIGHT + ATOM_DIAMETER)/2 &&
+                        GET_Y_LPARAM(lParam) > (WINDOW_WIDTH - ATOM_DIAMETER)/2)
+                {
+                    applicaton.changeToPlus();
+                } else {
+                    applicaton.pushAtom(angle, applicaton.getNextAtom());
+                    //if (!circle.checkOverflow()) {
+                    applicaton.generateNextAtom();
+                    //} else {
+                    //  PostMessage(hwnd,WM_QUIT,wParam,lParam);
+                    //}
+                }
+            } else {
+                applicaton.popAtom(angle);
+            }
+            return 0;
+        }
+
+    }
+    return DefWindowProc(hwnd, uMsg, wParam, lParam);
+}
+
+LRESULT CALLBACK MenuWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
+{
+    switch (uMsg)
+    {
+        case WM_DESTROY:
+            PostQuitMessage(0);
+            return 0;
+
+        case WM_PAINT:
+        {
+
+            return 0;
+        }
+        case WM_KEYDOWN:
+        {
+            ShowWindow(hwnd, 0);
+            return 0;
+        }
+        case WM_LBUTTONUP:
+        {
             return 0;
         }
 

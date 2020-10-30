@@ -4,36 +4,41 @@
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\application\Applicaton.cpp
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\application\Applicaton.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\Atom.h
-CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\BaseAtom.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\atom\Plus.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\circle\Circle.h
 CMakeFiles\Atomas.dir\application\Applicaton.cpp.obj: ..\circle\LinkedList.h
 
 CMakeFiles\Atomas.dir\atom\Atom.cpp.obj: ..\atom\Atom.cpp
 CMakeFiles\Atomas.dir\atom\Atom.cpp.obj: ..\atom\Atom.h
-CMakeFiles\Atomas.dir\atom\Atom.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\atom\Atom.cpp.obj: ..\atom\BaseAtom.h
 
-CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj: ..\atom\IAtom.cpp
-CMakeFiles\Atomas.dir\atom\IAtom.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\atom\BaseAtom.cpp.obj: ..\atom\BaseAtom.cpp
+CMakeFiles\Atomas.dir\atom\BaseAtom.cpp.obj: ..\atom\BaseAtom.h
 
-CMakeFiles\Atomas.dir\atom\Plus.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\atom\Minus.cpp.obj: ..\atom\BaseAtom.h
+CMakeFiles\Atomas.dir\atom\Minus.cpp.obj: ..\atom\Minus.cpp
+CMakeFiles\Atomas.dir\atom\Minus.cpp.obj: ..\atom\Minus.h
+
+CMakeFiles\Atomas.dir\atom\Plus.cpp.obj: ..\atom\BaseAtom.h
 CMakeFiles\Atomas.dir\atom\Plus.cpp.obj: ..\atom\Plus.cpp
 CMakeFiles\Atomas.dir\atom\Plus.cpp.obj: ..\atom\Plus.h
 
 CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\atom\Atom.h
-CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\atom\BaseAtom.h
+CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\atom\Minus.h
 CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\atom\Plus.h
 CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\circle\Circle.cpp
 CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\circle\Circle.h
 CMakeFiles\Atomas.dir\circle\Circle.cpp.obj: ..\circle\LinkedList.h
 
-CMakeFiles\Atomas.dir\circle\LinkedList.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\circle\LinkedList.cpp.obj: ..\atom\BaseAtom.h
 CMakeFiles\Atomas.dir\circle\LinkedList.cpp.obj: ..\circle\LinkedList.cpp
 CMakeFiles\Atomas.dir\circle\LinkedList.cpp.obj: ..\circle\LinkedList.h
 
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\application\Applicaton.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\Atom.h
-CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\IAtom.h
+CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\BaseAtom.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\circle\Circle.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\circle\LinkedList.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\main.cpp

@@ -5,36 +5,41 @@ CMakeFiles/Atomas.dir/application/Applicaton.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.cpp
  D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
 CMakeFiles/Atomas.dir/atom/Atom.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.cpp
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
-CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.cpp
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
+CMakeFiles/Atomas.dir/atom/BaseAtom.cpp.obj
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.cpp
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
+CMakeFiles/Atomas.dir/atom/Minus.cpp.obj
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.cpp
+ D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.h
 CMakeFiles/Atomas.dir/atom/Plus.cpp.obj
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.cpp
  D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
 CMakeFiles/Atomas.dir/circle/Circle.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.cpp
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
 CMakeFiles/Atomas.dir/circle/LinkedList.cpp.obj
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.cpp
  D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
 CMakeFiles/Atomas.dir/main.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
- D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
  D:/5sem/OSISP/OSISP/Kyrs/main.cpp

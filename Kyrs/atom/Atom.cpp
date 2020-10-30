@@ -7,6 +7,7 @@
 void Atom::create(int value){
     this->mass = value;
     this->isPlusCenter = FALSE;
+    this->isMinusCenter = FALSE;
     this->lathinName = GAME_LATHIN_NAME[value];
     this->name = GAME_NAME[value];
     this->rad = 0;
@@ -42,7 +43,7 @@ int Atom::thirdHash(string str) {
     return result;
 }
 
-Atom::Atom() {}
+Atom::Atom() = default;
 
-Atom::~Atom() {}
+Atom::~Atom() = default;
 

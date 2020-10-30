@@ -35,23 +35,22 @@ public:
     HPEN atomPen;
 
     int getCircleSize();
-
-    void insertAtom(int position, IAtom* atom);
-
+    void insertAtom(int position, BaseAtom* atom);
     void generateNextAtom();
-
-    IAtom* getCircleValue(int position);
-    IAtom* getNextAtom();
+    BaseAtom* getCircleValue(int position);
+    BaseAtom* getNextAtom();
     void update();
-    void pushAtom(float angle, IAtom *insertAtom);
+    void pushAtom(float angle, BaseAtom *insertAtom);
+    void popAtom(float angle);
+    void changeToPlus();
 
     Applicaton();
 
     ~Applicaton();
 private:
-    void addPlusResult(float angle, IAtom *insertAtom);
-    void plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom);
-    BOOL plusAction(int position, IAtom *atom);
+    void addPlusResult(float angle, BaseAtom *insertAtom);
+    void plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom *stepAtom);
+    BOOL plusAction(int position, BaseAtom *atom);
     void checkPlusAction();
     BOOL isPlusAction;
     Circle circle;

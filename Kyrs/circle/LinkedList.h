@@ -6,13 +6,13 @@
 #define KYRS_LINKEDLIST_H
 
 
-#include "../atom/IAtom.h"
+#include "../atom/BaseAtom.h"
 
 class LinkedList {
 public:
 
     struct linkedList{
-        IAtom* atom;
+        BaseAtom* atom;
         linkedList* next;
         linkedList* prev;
     };
@@ -21,15 +21,15 @@ public:
 
     LinkedList();
 
-    void insert(int position, IAtom* atom);
+    void insert(int position, BaseAtom* atom);
 
-    void push_back(IAtom* atom);
+    void push_back(BaseAtom* atom);
 
-    void push_front(IAtom* atom);
+    void push_front(BaseAtom* atom);
 
-    IAtom* getValue(int position);
+    BaseAtom* getValue(int position);
 
-    void remove(IAtom* atom);
+    void remove(BaseAtom* atom);
 
     int getSize();
 private:

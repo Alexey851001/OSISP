@@ -25,10 +25,10 @@ string
 -
 map
 -
-IAtom.h
-D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+BaseAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
 
-D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
 type_traits
 -
 string
@@ -39,8 +39,8 @@ map
 -
 
 D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
-IAtom.h
-D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+BaseAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
 
 D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
 list
@@ -55,6 +55,20 @@ LinkedList.h
 D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
 
 D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
-../atom/IAtom.h
-D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h
+../atom/BaseAtom.h
+D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
+
+D:/5sem/OSISP/OSISP/Kyrs/main.cpp
+iostream
+-
+windows.h
+-
+windowsx.h
+-
+cmath
+-
+circle/Circle.h
+D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
+application/Applicaton.h
+D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h
 

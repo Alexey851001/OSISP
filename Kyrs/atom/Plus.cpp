@@ -6,6 +6,8 @@
 
 void Plus::create(int value) {
     this->isRed = (value == 0);
+    this->isMinusCenter = FALSE;
+    this->isPlusCenter = FALSE;
     this->mass = 0;
     this->name = GAME_NAME[0];
     this->rad = 0;

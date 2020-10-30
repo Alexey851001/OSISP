@@ -94,10 +94,16 @@
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h">
 			<Option target="Atomas"/>
 		</Unit>
-		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.cpp">
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.cpp">
 			<Option target="Atomas"/>
 		</Unit>
-		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.h">
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.cpp">
+			<Option target="Atomas"/>
+		</Unit>
+		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.h">
 			<Option target="Atomas"/>
 		</Unit>
 		<Unit filename="D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.cpp">

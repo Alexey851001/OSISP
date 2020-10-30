@@ -9,11 +9,11 @@
 #include <windows.h>
 #include <string>
 #include <map>
-#include "IAtom.h"
+#include "BaseAtom.h"
 
 using namespace std;
 
-class Atom : public IAtom{
+class Atom : public BaseAtom{
 private:
     map <int, string> GAME_LATHIN_NAME = {{1,  "Hydrogenium"}, {2, "Helium"}, {3, "Lithium"}, {4, "Beryllium"},
                                                  {5,  "Borum"}, {6, "Carboneum"}, {7, "Nitrogenium"}, {8, "Oxygenium"},

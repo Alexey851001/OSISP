@@ -6,9 +6,9 @@
 #define KYRS_PLUS_H
 
 
-#include "IAtom.h"
+#include "BaseAtom.h"
 
-class Plus : public IAtom {
+class Plus : public BaseAtom {
 
 private:
     void create(int value) override;

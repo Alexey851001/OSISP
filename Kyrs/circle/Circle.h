@@ -19,7 +19,7 @@ public:
     LinkedList gameCircle;
 
     vector<int> workGroup;
-    IAtom *nextAtom;
+    BaseAtom *nextAtom;
 
     Circle();
 

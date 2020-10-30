@@ -6,7 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/application/Applicaton.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/Atom.cpp.obj"
-  "D:/5sem/OSISP/OSISP/Kyrs/atom/IAtom.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/IAtom.cpp.obj"
+  "D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/BaseAtom.cpp.obj"
+  "D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/Minus.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/atom/Plus.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/circle/Circle.cpp.obj"
   "D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.cpp" "D:/5sem/OSISP/OSISP/Kyrs/cmake-build-debug/CMakeFiles/Atomas.dir/circle/LinkedList.cpp.obj"

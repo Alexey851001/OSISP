@@ -9,11 +9,11 @@ int Applicaton::getCircleSize() {
     return this->circle.gameCircle.getSize();
 }
 
-void Applicaton::pushAtom(float angle, IAtom *insertAtom){
+void Applicaton::pushAtom(float angle, BaseAtom *insertAtom){
 
     BOOL isInsert = FALSE;
     for (int i = 0; i < this->getCircleSize(); i++){
-        IAtom* atom = this->getCircleValue(i);
+        BaseAtom* atom = this->getCircleValue(i);
         float range = (2*PI / (this->getCircleSize() + 1));
         if (atom->angle > angle) {
             insertAtom->angle = range * i;
@@ -27,7 +27,7 @@ void Applicaton::pushAtom(float angle, IAtom *insertAtom){
     }
 }
 
-void Applicaton::plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom){
+void Applicaton::plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom *stepAtom){
     float relativeAngle = min(abs(tempAtom->angle-plusAtom->angle),abs(stepAtom->angle - plusAtom->angle));
     if (relativeAngle != 0){
         float plusAnimationSpeed = relativeAngle/10;
@@ -61,9 +61,9 @@ void Applicaton::plusAnimation(IAtom *plusAtom, IAtom *tempAtom, IAtom *stepAtom
     }
 }
 
-BOOL Applicaton::plusAction(int position, IAtom *atom){
-    IAtom *tempAtom = this->getCircleValue(position+1);
-    IAtom *stepAtom = this->getCircleValue(position - 1);
+BOOL Applicaton::plusAction(int position, BaseAtom *atom){
+    BaseAtom *tempAtom = this->getCircleValue(position + 1);
+    BaseAtom *stepAtom = this->getCircleValue(position - 1);
     Plus *plus = (Plus*)atom;
     if (plus->isRed) {
         if (tempAtom->mass == stepAtom->mass && tempAtom != stepAtom && tempAtom->mass != 0) {
@@ -85,7 +85,7 @@ void Applicaton::checkPlusAction(){
     bool find = FALSE;
     int size = this->getCircleSize();
     for (int i = 0; i < size; i++) {
-        IAtom* atom = this->getCircleValue(i);
+        BaseAtom* atom = this->getCircleValue(i);
         if (atom->mass == 0 || atom->isPlusCenter) {
             if(this->plusAction(i, atom)){
                 find = TRUE;
@@ -99,25 +99,24 @@ void Applicaton::checkPlusAction(){
 
 void Applicaton::update() {
     float circleDegree = 2 * PI;
-    BOOL isCurrentAngle = TRUE;
-    BOOL isCurrentRadius = TRUE;
+    BOOL isCurrentValue = TRUE;
     float range = circleDegree / circle.gameCircle.getSize();
     for (int i = 0; i < circle.gameCircle.getSize(); i++) {
-        IAtom *atom = circle.gameCircle.getValue(i);
+        BaseAtom *atom = circle.gameCircle.getValue(i);
         if(!this->isPlusAction) {
-            if (atom->angle > 3 * PI / 2 && (range * i) < PI/2){
+            if (atom->angle >  PI && (range * i) < PI/2){
                 atom->angle -= 2*PI;
             }
             if (atom->angle < (range * i)) {
                 atom->angle += ANGLE_SPEED;
-                isCurrentAngle = FALSE;
+                isCurrentValue = FALSE;
                 if (atom->angle > (range * i)) {
                     atom->angle = range * i;
                 }
             }
             if (atom->angle > (range * i )) {
                 atom->angle -= ANGLE_SPEED;
-                isCurrentAngle = FALSE;
+                isCurrentValue = FALSE;
                 if (atom->angle < (range * i)) {
                     atom->angle = (range * i);
                 }
@@ -125,14 +124,21 @@ void Applicaton::update() {
 
             if (atom->rad < (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
                 atom->rad += RADIUS_SPEED;
-                isCurrentRadius = FALSE;
+                isCurrentValue = FALSE;
                 if (atom->rad > (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2)) {
                     atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
                 }
             }
         }
     }
-    if(isCurrentRadius && isCurrentAngle) {
+    if (circle.nextAtom->rad != 0){
+        circle.nextAtom->rad -= RADIUS_SPEED;
+        isCurrentValue = FALSE;
+        if (circle.nextAtom->rad < 0){
+            circle.nextAtom->rad = 0;
+        }
+    }
+    if(isCurrentValue) {
         this->checkPlusAction();
     }
 }
@@ -159,11 +165,11 @@ Applicaton::~Applicaton() {
     DeleteObject(this->atomPen);
 }
 
-IAtom *Applicaton::getCircleValue(int position) {
+BaseAtom *Applicaton::getCircleValue(int position) {
     return this->circle.gameCircle.getValue(position);
 }
 
-IAtom *Applicaton::getNextAtom() {
+BaseAtom *Applicaton::getNextAtom() {
     return this->circle.nextAtom;
 }
 
@@ -171,15 +177,15 @@ void Applicaton::generateNextAtom() {
     this->circle.generateNext();
 }
 
-void Applicaton::insertAtom(int position, IAtom* atom) {
+void Applicaton::insertAtom(int position, BaseAtom* atom) {
     this->circle.gameCircle.insert(position,atom);
 
 }
 
-void Applicaton::addPlusResult(float angle, IAtom *insertAtom) {
+void Applicaton::addPlusResult(float angle, BaseAtom *insertAtom) {
     BOOL isInsert = FALSE;
     for (int i = 0; i < this->getCircleSize(); i++){
-        IAtom* atom = this->getCircleValue(i);
+        BaseAtom* atom = this->getCircleValue(i);
         if (atom->angle > angle) {
             insertAtom->angle = angle;
             this->insertAtom(i, insertAtom);
@@ -191,4 +197,67 @@ void Applicaton::addPlusResult(float angle, IAtom *insertAtom) {
         insertAtom->angle = angle;
         this->insertAtom(0, insertAtom);
     }
+}
+
+void Applicaton::popAtom(float angle) {
+    BOOL isFind = FALSE;
+    BaseAtom* temp = this->getNextAtom();
+    for (int i = 0; i < this->getCircleSize(); i++){
+        BaseAtom* atom = this->getCircleValue(i);
+        BaseAtom* stepAtom = this->getCircleValue(i - 1);
+        if (atom->angle > angle) {
+            BaseAtom *minus;
+            abs(atom->angle - angle) > abs(stepAtom->angle - angle) ? minus = stepAtom : minus = atom;
+            switch (minus->mass) {
+                case 0:{
+                    Plus *next = new Plus();
+                    Plus *plus = (Plus*)minus;
+                    next->atomCreate(!plus->isRed);
+                    this->circle.nextAtom = next;
+                    break;
+                }
+                default: {
+                    Atom *next = new Atom();
+                    next->atomCreate(minus->mass);
+                    this->circle.nextAtom = next;
+                }
+
+            }
+            this->circle.nextAtom->angle = minus->angle;
+            this->circle.nextAtom->rad = minus->rad;
+            this->circle.gameCircle.remove(minus);
+            isFind = TRUE;
+            break;
+        }
+    }
+    if (!isFind){
+        BaseAtom *minus;
+        BaseAtom* atom = this->getCircleValue(0);
+        BaseAtom* stepAtom = this->getCircleValue(this->getCircleSize() - 1);
+        abs(atom->angle - (angle - 2*PI)) > abs(stepAtom->angle - angle) ? minus = stepAtom : minus = atom;
+        switch (minus->mass) {
+            case 0:{
+                Plus *next = new Plus();
+                Plus *plus = (Plus*)minus;
+                next->atomCreate(!plus->isRed);
+                this->circle.nextAtom = next;
+                break;
+            }
+            default: {
+                Atom *next = new Atom();
+                next->atomCreate(minus->mass);
+                this->circle.nextAtom = next;
+            }
+        }
+        this->circle.nextAtom->angle = minus->angle;
+        this->circle.nextAtom->rad = minus->rad;
+        this->circle.gameCircle.remove(minus);
+    }
+    this->circle.nextAtom->isMinusCenter = TRUE;
+}
+
+void Applicaton::changeToPlus() {
+    Plus *next = new Plus();
+    next->atomCreate(0);
+    this->circle.nextAtom = next;
 }
