@@ -97,7 +97,7 @@ void Applicaton::checkPlusAction(){
     }
 }
 
-void Applicaton::update() {
+void Applicaton::moveAnimation() {
     float circleDegree = 2 * PI;
     BOOL isCurrentValue = TRUE;
     float range = circleDegree / circle.gameCircle.getSize();
@@ -141,6 +141,11 @@ void Applicaton::update() {
     if(isCurrentValue) {
         this->checkPlusAction();
     }
+}
+
+void Applicaton::update() {
+    moveAnimation();
+    menuAnimation();
 }
 
 
@@ -260,4 +265,8 @@ void Applicaton::changeToPlus() {
     Plus *next = new Plus();
     next->atomCreate(0);
     this->circle.nextAtom = next;
+}
+
+void Applicaton::menuAnimation() {
+
 }

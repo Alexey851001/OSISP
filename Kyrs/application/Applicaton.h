@@ -20,8 +20,11 @@
 #define SLEEP_TIME 5/3
 
 #define WHITE RGB(255,255,255)
+#define BLACK RGB(0,0,0)
 #define BACKGROUND RGB(0x60,0x7D,0x8B)
 #define COLOR_SHIFT 30
+
+
 
 class Applicaton {
 public:
@@ -48,6 +51,8 @@ public:
 
     ~Applicaton();
 private:
+    void moveAnimation();
+    void menuAnimation();
     void addPlusResult(float angle, BaseAtom *insertAtom);
     void plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom *stepAtom);
     BOOL plusAction(int position, BaseAtom *atom);

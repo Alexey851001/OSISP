@@ -9,7 +9,8 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 LRESULT CALLBACK MenuWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
-HWND menuHwnd, hwnd;
+HWND menuHwnd, gameHwnd;
+BOOL setWhite = FALSE;
 
 Applicaton applicaton;
 
@@ -38,7 +39,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
 
     RegisterClass(&menuClass);
 
-    hwnd = CreateWindowEx(
+    gameHwnd = CreateWindowEx(
             0,
             CLASS_NAME,
             "Atomas",
@@ -50,7 +51,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
             NULL
     );
 
-    if (hwnd == NULL)
+    if (gameHwnd == NULL)
     {
         return 1;
     }
@@ -58,7 +59,7 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
     menuHwnd = CreateWindowEx(
             0,
             MENU_NAME,
-            "Atomas",
+            "Menu",
             WS_OVERLAPPEDWINDOW & ~WS_THICKFRAME & ~WS_MAXIMIZEBOX,
             CW_USEDEFAULT, CW_USEDEFAULT, WINDOW_WIDTH, WINDOW_HEIGHT,
             NULL,
@@ -67,8 +68,13 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
             NULL
     );
 
-   // ShowWindow(menuHwnd, nShowCmd);
-    ShowWindow(hwnd, nShowCmd);
+    if (menuHwnd == NULL)
+    {
+        return 1;
+    }
+
+    ShowWindow(menuHwnd, nShowCmd);
+    //ShowWindow(gameHwnd, nShowCmd);
 
     MSG msg = { };
     BOOL isDone = FALSE;
@@ -80,10 +86,9 @@ int WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR lpCmdLine, int nShowCmd)
                 isDone = TRUE;
             }
         }
-
         applicaton.update();
-        InvalidateRect(hwnd,NULL,FALSE);
-
+        InvalidateRect(gameHwnd,NULL,FALSE);
+        InvalidateRect(menuHwnd,NULL,FALSE);
         Sleep(SLEEP_TIME);
     }
     return 0;
@@ -183,17 +188,15 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)
     {
-        case WM_DESTROY:
-            PostQuitMessage(0);
+        case WM_CLOSE:{
+            ShowWindow(hwnd, SW_HIDE);
+            ShowWindow(menuHwnd, SW_SHOWNORMAL);
             return 0;
+        }
 
         case WM_PAINT:
         {
             fillWindow(hwnd);
-            return 0;
-        }
-        case WM_KEYDOWN:
-        {
             return 0;
         }
         case WM_LBUTTONUP:
@@ -224,6 +227,58 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
     return DefWindowProc(hwnd, uMsg, wParam, lParam);
 }
 
+BOOL Line(HDC hdc, int x1, int y1, int x2, int y2){
+    MoveToEx(hdc,x1,y1,NULL);
+    return LineTo(hdc, x2, y2);
+}
+
+void fillMenu(HWND hwnd){
+    PAINTSTRUCT ps;
+    HDC hdc = BeginPaint(hwnd, &ps);
+
+    HDC memHdc = CreateCompatibleDC(hdc);
+    RECT clientRect;
+    GetClientRect(hwnd, &clientRect);
+
+    HBITMAP bmp = CreateCompatibleBitmap(hdc, clientRect.right,clientRect.bottom);
+    HBITMAP oldbmp = (HBITMAP)SelectObject(memHdc, bmp);
+
+    FillRect(memHdc, &ps.rcPaint, applicaton.backgroundBrush);
+
+    HFONT font = CreateFont(40, 0, 0, 0, FW_DONTCARE, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
+                            OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+                            DEFAULT_QUALITY, VARIABLE_PITCH, NULL);
+    HFONT oldFont = (HFONT)SelectObject(hdc, font);
+
+    RECT rect;
+
+    SetRect(&rect,WINDOW_WIDTH / 2 - 20,WINDOW_HEIGHT - 100,WINDOW_WIDTH / 2 + 20,WINDOW_HEIGHT - 60);
+
+    POINT pt;
+    GetCursorPos(&pt);
+    ScreenToClient(hwnd, &pt);
+    if (pt.x > WINDOW_WIDTH / 2 - 20 && pt.x < WINDOW_WIDTH / 2 + 20 && pt.y > WINDOW_HEIGHT - 100 && pt.y < WINDOW_HEIGHT - 60)
+    {
+        SetTextColor(memHdc, WHITE);
+    } else {
+        SetTextColor(memHdc, BLACK);
+    }
+
+    SetBkMode(memHdc, TRANSPARENT);
+    DrawText(memHdc,"Play", -1, &rect, DT_CENTER);
+    SetBkMode(memHdc, OPAQUE);
+
+    SelectObject(memHdc, oldFont);
+    DeleteObject(font);
+
+    BitBlt(hdc,0,0,clientRect.right,clientRect.bottom,memHdc,0,0,SRCCOPY);
+    SelectObject(hdc,oldbmp);
+    DeleteObject(bmp);
+    DeleteDC(memHdc);
+
+    EndPaint(hwnd, &ps);
+}
+
 LRESULT CALLBACK MenuWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)
@@ -234,16 +289,19 @@ LRESULT CALLBACK MenuWindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lPar
 
         case WM_PAINT:
         {
-
-            return 0;
-        }
-        case WM_KEYDOWN:
-        {
-            ShowWindow(hwnd, 0);
+            fillMenu(hwnd);
             return 0;
         }
         case WM_LBUTTONUP:
         {
+            POINT pt;
+            GetCursorPos(&pt);
+            ScreenToClient(hwnd, &pt);
+            if (pt.x > WINDOW_WIDTH / 2 - 20 && pt.x < WINDOW_WIDTH / 2 + 20 && pt.y > WINDOW_HEIGHT - 100 && pt.y < WINDOW_HEIGHT - 60)
+            {
+                ShowWindow(hwnd, SW_HIDE);
+                ShowWindow(gameHwnd, SW_SHOWNORMAL);
+            }
             return 0;
         }
 
