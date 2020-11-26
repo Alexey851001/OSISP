@@ -22,7 +22,7 @@ void Atom::atomCreate(int mass) {
 int Atom::firstHash(string str) {
     int result = 0;
     for (auto &symbol : str){
-        result += (int)symbol * 15;
+        result += (int)symbol * FIRST_HASH_ARGUMENT;
     }
     return result;
 }
@@ -30,7 +30,7 @@ int Atom::firstHash(string str) {
 int Atom::secondHash(string str) {
     int result = 0;
     for (auto &symbol : str){
-        result += (int)symbol*(int)symbol * 42;
+        result += (int)symbol*(int)symbol * SECOND_HASH_ARGUMENT;
     }
     return result;
 }
@@ -38,7 +38,7 @@ int Atom::secondHash(string str) {
 int Atom::thirdHash(string str) {
     int result = 0;
     for (auto &symbol : str){
-        result += (int)symbol * (int)symbol * (int)symbol * 51;
+        result += (int)symbol * (int)symbol * (int)symbol * THIRD_HASH_ARGUMENT;
     }
     return result;
 }

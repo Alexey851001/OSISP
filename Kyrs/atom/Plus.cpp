@@ -12,7 +12,7 @@ void Plus::create(int value) {
     this->name = GAME_NAME[0];
     this->rad = 0;
     this->angle = 0;
-    value == 0 ? this->color = RGB(255,0,0): this->color = RGB(0,0,0);
+    value == 0 ? this->color = RED: this->color = BLACK;
 }
 void Plus::atomCreate(int value) {
     this->create(value);

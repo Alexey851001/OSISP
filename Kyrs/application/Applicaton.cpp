@@ -30,9 +30,9 @@ void Applicaton::pushAtom(float angle, BaseAtom *insertAtom){
 void Applicaton::plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom *stepAtom){
     float relativeAngle = min(abs(tempAtom->angle-plusAtom->angle),abs(stepAtom->angle - plusAtom->angle));
     if (relativeAngle != 0){
-        float plusAnimationSpeed = relativeAngle/10;
-        if (plusAnimationSpeed < 0.05)
-            plusAnimationSpeed = 0.05;
+        float plusAnimationSpeed = relativeAngle / SLOWDOWN_PLUS_ANIMATION;
+        if (plusAnimationSpeed < LOWEST_PLUS_ANIMATION_SPEED)
+            plusAnimationSpeed = LOWEST_PLUS_ANIMATION_SPEED;
 
         tempAtom->angle -= plusAnimationSpeed;
         stepAtom->angle += plusAnimationSpeed;
@@ -47,7 +47,7 @@ void Applicaton::plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom 
         mass = max(mass, stepAtom->mass + 1);
         if (plusAtom->mass == 0){
             Plus *plus = (Plus*)plusAtom;
-            plus->isRed ? 0 : mass += 2;
+            plus->isRed ? 0 : mass += BLACK_PLUS_DEBUFF_MASS;
         }
         Atom *atom = new Atom();
         atom->atomCreate(mass);
@@ -57,7 +57,8 @@ void Applicaton::plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom 
         this->addPlusResult(plusAtom->angle, atom);
         atom->rad = (GAME_CIRCLE_RADIUS - ATOM_DIAMETER / 2);
         this->circle.gameCircle.remove(plusAtom);
-        Sleep(10);
+        this->score += mass * SCORE_MULTIPLY;
+        Sleep(SLEEP_VALUE);
     }
 }
 
@@ -146,10 +147,18 @@ void Applicaton::moveAnimation() {
 void Applicaton::update() {
     moveAnimation();
     menuAnimation();
+    if (this->score - this->limiter > (LEVEL_UP_SCORE + this->limiter / 2)){
+        this->circle.workGroup.erase(this->circle.workGroup.begin());
+        this->limiter += LEVEL_UP_SCORE;
+        this->circle.workGroup.push_back(this->limiter / LEVEL_UP_SCORE + WORKGROUP_SIZE);
+    }
 }
 
 
 Applicaton::Applicaton() {
+    this->menuOffset = 0;
+    this->leftAnimation = FALSE;
+    this->rightAnimation = FALSE;
     this->isPlusAction = FALSE;
     this->circleLeft = WINDOW_WIDTH/2 - GAME_CIRCLE_RADIUS;
     this->circleTop = WINDOW_HEIGHT/2 - GAME_CIRCLE_RADIUS;
@@ -160,7 +169,19 @@ Applicaton::Applicaton() {
     this->atomFont = CreateFont(ATOM_DIAMETER/2, 0, 0, 0, FW_DONTCARE, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
                                 OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
                                 DEFAULT_QUALITY, VARIABLE_PITCH, NULL);
-    this->atomPen = CreatePen(0,1,RGB(255,255,255));
+    this->menuFont = CreateFont(TEXT_HEIGHT, 0, 0, 0, FW_DONTCARE, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
+                                OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+                                DEFAULT_QUALITY, VARIABLE_PITCH, NULL);
+    this->menuAtomFont = CreateFont(MENU_ATOM_DIAMETER/2, 0, 0, 0, FW_DONTCARE, FALSE, FALSE, FALSE, DEFAULT_CHARSET,
+                                OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
+                                DEFAULT_QUALITY, VARIABLE_PITCH, NULL);
+    this->atomPen = CreatePen(0,1,WHITE);
+    this->menuAtom = new Atom();
+    this->menuAtom->atomCreate(1);
+    this->highScore = 0;
+    this->score = 0;
+    this->limiter = 0;
+    this->isMenu = TRUE;
 }
 
 Applicaton::~Applicaton() {
@@ -168,6 +189,9 @@ Applicaton::~Applicaton() {
     DeleteObject(this->circleBrush);
     DeleteObject(this->atomFont);
     DeleteObject(this->atomPen);
+    DeleteObject(this->menuFont);
+    DeleteObject(this->menuAtomFont);
+    delete this->menuAtom;
 }
 
 BaseAtom *Applicaton::getCircleValue(int position) {
@@ -206,7 +230,6 @@ void Applicaton::addPlusResult(float angle, BaseAtom *insertAtom) {
 
 void Applicaton::popAtom(float angle) {
     BOOL isFind = FALSE;
-    BaseAtom* temp = this->getNextAtom();
     for (int i = 0; i < this->getCircleSize(); i++){
         BaseAtom* atom = this->getCircleValue(i);
         BaseAtom* stepAtom = this->getCircleValue(i - 1);
@@ -268,5 +291,64 @@ void Applicaton::changeToPlus() {
 }
 
 void Applicaton::menuAnimation() {
+    if (leftAnimation){
+        if (menuOffset >= WINDOW_WIDTH){
+            leftAnimation = FALSE;
+        } else {
+            menuOffset += 1;
+        }
+        if (menuOffset > 0 && menuOffset < WINDOW_WIDTH) {
+            menuOffset += MENU_ANIMATION_SPEED;
+            menuAtom->rad += MENU_ANIMATION_SPEED;
+            if (menuOffset > WINDOW_WIDTH) {
+                menuOffset = WINDOW_WIDTH;
+                menuAtom->rad = WINDOW_WIDTH;
+                leftAnimation = FALSE;
+            }
+        } else {
+            if (menuOffset > -1 * WINDOW_WIDTH && menuOffset < 0) {
+                menuOffset += MENU_ANIMATION_SPEED;
+                menuAtom->rad += MENU_ANIMATION_SPEED;
+                if (menuOffset > 0) {
+                    menuOffset = 0;
+                    menuAtom->rad = 0;
+                    leftAnimation = FALSE;
+                }
+            } else {
+                leftAnimation = FALSE;
+            }
+        }
+    }
+    if (rightAnimation) {
+        if (menuOffset <= -1*WINDOW_WIDTH){
+            rightAnimation = FALSE;
+        } else {
+            menuOffset -= 1;
+        }
+        if (menuOffset < 0 && menuOffset > -1*WINDOW_WIDTH) {
+            menuOffset -= MENU_ANIMATION_SPEED;
+            menuAtom->rad -= MENU_ANIMATION_SPEED;
+            if (menuOffset < -1*WINDOW_WIDTH) {
+                menuOffset = -1 * WINDOW_WIDTH;
+                menuAtom->rad = -1 * WINDOW_WIDTH;
+                rightAnimation = FALSE;
+            }
+        } else {
+            if (menuOffset < WINDOW_WIDTH && menuOffset > 0){
+                menuOffset -= MENU_ANIMATION_SPEED;
+                menuAtom->rad -= MENU_ANIMATION_SPEED;
+                if (menuOffset < 0) {
+                    menuOffset = 0;
+                    menuAtom->rad = 0;
+                    rightAnimation = FALSE;
+                }
+            } else {
+                rightAnimation = FALSE;
+            }
+        }
+    }
+}
 
+bool Applicaton::checkGameOver() {
+    return this->circle.checkOverflow();
 }

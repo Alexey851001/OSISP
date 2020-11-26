@@ -11,6 +11,9 @@
 #include <map>
 #include "BaseAtom.h"
 
+#define FIRST_HASH_ARGUMENT 15
+#define SECOND_HASH_ARGUMENT 42
+#define THIRD_HASH_ARGUMENT 51
 using namespace std;
 
 class Atom : public BaseAtom{
@@ -21,7 +24,8 @@ private:
                                                  {13, "Aluminium"}, {14, "Silicium"}, {15, "Phosphorus"}, {16, "Sulfur"},
                                                  {17, "Chlorium"}, {18, "Argon"}, {19, "Kalium"}, {20, "Calcium"},
                                                  {21, "Scandium"}, {22, "Titanium"}, {23, "Vanadium"}, {24, "Chromium"},
-                                                 {25, "Manganum"}, {26, "Ferrum"}, {27, "Cobaltum"}, {28, "Niccolum"}};
+                                                 {25, "Manganum"}, {26, "Ferrum"}, {27, "Cobaltum"}, {28, "Niccolum"},
+                                                 {29, "Cuprum"}, {30, "Zincum"}, {31, "Gallium"}, {32, "Germanium"}};
 
     int firstHash(string str);
     int secondHash(string str);

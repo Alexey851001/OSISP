@@ -14,6 +14,7 @@ using namespace std;
 class Queue {
 public:
     queue<QueueElem> myQueue;
+
     CRITICAL_SECTION pushCriticalSection;
     CRITICAL_SECTION popCriticalSection;
 

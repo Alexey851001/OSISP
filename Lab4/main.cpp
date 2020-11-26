@@ -26,7 +26,7 @@ int main() {
     cin >> countOfThreadsFromConsole;
 
     unsigned int maxThreads = thread::hardware_concurrency();
-    if (countOfThreadsFromConsole > maxThreads){
+    if (countOfThreadsFromConsole > maxThreads || countOfThreadsFromConsole <= 0){
         std::cout << "Max number of threads is " << maxThreads << std::endl;
         return 1;
     }

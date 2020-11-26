@@ -11,6 +11,11 @@
 #include "../atom/Atom.h"
 #include "LinkedList.h"
 
+#define WORKGROUP_SIZE 4
+#define START_GAME_CIRCLE_SIZE 8
+#define GAME_OVER_COUNTER 25
+#define ATOMS_IN_GAME 7
+
 using namespace std;
 
 class Circle {

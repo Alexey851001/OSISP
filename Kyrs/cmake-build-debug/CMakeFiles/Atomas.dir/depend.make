@@ -39,6 +39,8 @@ CMakeFiles\Atomas.dir\circle\LinkedList.cpp.obj: ..\circle\LinkedList.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\application\Applicaton.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\Atom.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\BaseAtom.h
+CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\Minus.h
+CMakeFiles\Atomas.dir\main.cpp.obj: ..\atom\Plus.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\circle\Circle.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\circle\LinkedList.h
 CMakeFiles\Atomas.dir\main.cpp.obj: ..\main.cpp

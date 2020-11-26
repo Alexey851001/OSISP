@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/5sem/OSISP/Lab3/Compile/library/library.cpp" "D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/injectDll.dir/library/library.cpp.obj"
+  "D:/5sem/OSISP/OSISP/Lab3/Compile/library/library.cpp" "D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/injectDll.dir/library/library.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 

@@ -1,6 +1,6 @@
-D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/injectDll.dir
-D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/library.dir
-D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/app.dir
-D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/test.dir
+D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/injectDll.dir
+D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/library.dir
+D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/app.dir
+D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/test.dir

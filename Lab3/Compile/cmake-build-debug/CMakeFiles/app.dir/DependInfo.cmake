@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/5sem/OSISP/Lab3/Compile/main.cpp" "D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/app.dir/main.cpp.obj"
+  "D:/5sem/OSISP/OSISP/Lab3/Compile/main.cpp" "D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/app.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "MSVC")
 
@@ -14,7 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "D:/5sem/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/library.dir/DependInfo.cmake"
+  "D:/5sem/OSISP/OSISP/Lab3/Compile/cmake-build-debug/CMakeFiles/library.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

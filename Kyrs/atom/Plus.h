@@ -7,6 +7,8 @@
 
 
 #include "BaseAtom.h"
+#define BLACK RGB(0,0,0)
+#define RED RGB(255,0,0)
 
 class Plus : public BaseAtom {
 

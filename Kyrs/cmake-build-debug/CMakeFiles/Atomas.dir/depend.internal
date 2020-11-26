@@ -40,6 +40,8 @@ CMakeFiles/Atomas.dir/main.cpp.obj
  D:/5sem/OSISP/OSISP/Kyrs/application/Applicaton.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/Atom.h
  D:/5sem/OSISP/OSISP/Kyrs/atom/BaseAtom.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/Minus.h
+ D:/5sem/OSISP/OSISP/Kyrs/atom/Plus.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/Circle.h
  D:/5sem/OSISP/OSISP/Kyrs/circle/LinkedList.h
  D:/5sem/OSISP/OSISP/Kyrs/main.cpp
