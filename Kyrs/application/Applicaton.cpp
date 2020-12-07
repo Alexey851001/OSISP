@@ -144,9 +144,7 @@ void Applicaton::moveAnimation() {
     }
 }
 
-void Applicaton::update() {
-    moveAnimation();
-    menuAnimation();
+void Applicaton::updateScore(){
     if (this->score - this->limiter > (LEVEL_UP_SCORE + this->limiter / 2)){
         this->circle.workGroup.erase(this->circle.workGroup.begin());
         this->limiter += LEVEL_UP_SCORE;
@@ -154,6 +152,14 @@ void Applicaton::update() {
     }
 }
 
+void Applicaton::update() {
+    if (!this->isMenu) {
+        moveAnimation();
+    } else {
+        menuAnimation();
+    }
+    updateScore();
+}
 
 Applicaton::Applicaton() {
     this->menuOffset = 0;
@@ -208,7 +214,6 @@ void Applicaton::generateNextAtom() {
 
 void Applicaton::insertAtom(int position, BaseAtom* atom) {
     this->circle.gameCircle.insert(position,atom);
-
 }
 
 void Applicaton::addPlusResult(float angle, BaseAtom *insertAtom) {

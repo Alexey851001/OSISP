@@ -85,6 +85,7 @@ public:
 private:
     void moveAnimation();
     void menuAnimation();
+    void updateScore();
     void addPlusResult(float angle, BaseAtom *insertAtom);
     void plusAnimation(BaseAtom *plusAtom, BaseAtom *tempAtom, BaseAtom *stepAtom);
     BOOL plusAction(int position, BaseAtom *atom);
